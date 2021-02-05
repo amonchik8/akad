@@ -1,6 +1,12 @@
 <template>
-    <div></div>
+  <div class="container"></div>
 </template>
+
+<script>
+export default {
+  name: "TheContainer",
+};
+</script>
 
 <style lang="scss">
 .container {

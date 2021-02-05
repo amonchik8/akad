@@ -2,6 +2,12 @@
   <h2 class="title"><slot /></h2>
 </template>
 
+<script>
+export default {
+  name: "Title",
+};
+</script>
+
 <style lang="scss">
 .title {
   @include text($H30, 700, $base-color);

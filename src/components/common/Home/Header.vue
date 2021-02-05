@@ -13,7 +13,7 @@
         <div class="content-box__image-wrapper">
           <img
             class="content-box__image"
-            src="../assets/images/imageHome.png"
+            src="@/assets/images/imageHome.png"
             alt="image"
           />
         </div>
@@ -37,10 +37,11 @@
 </template>
 
 <script>
-import TheNavigation from "./TheNavigation";
-import Button from "./Button";
+import TheNavigation from "@/components/TheNavigation";
+import Button from "../Button";
 
 export default {
+  name: "Header",
   components: {
     Button,
     TheNavigation,
@@ -50,7 +51,7 @@ export default {
 
 <style lang="scss">
 .header {
-  background-image: url("../assets/images/bgHome.png");
+  background-image: url("../../../assets/images/bgHome.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -109,7 +110,6 @@ export default {
     right: 0;
     bottom: 0;
     object-fit: cover;
-    background-color: red;
   }
   &__article {
     @include flex(center, flex-end, column);

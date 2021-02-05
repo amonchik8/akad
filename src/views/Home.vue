@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <HomeHeader></HomeHeader>
+    <Header></Header>
     <WhyChoose></WhyChoose>
     <Portfolio></Portfolio>
     <Subscribe></Subscribe>
@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import HomeHeader from "../components/HomeHeader";
-import WhyChoose from "../components/WhyChoose";
-import Portfolio from "../components/Portfolio";
-import Subscribe from "../components/Subscribe";
+import Header from "../components/common/Home/Header";
+import WhyChoose from "../components/common/Home/WhyChoose";
+import Portfolio from "../components/common/Home/Portfolio";
+import Subscribe from "../components/common/Home/Subscribe";
 
 export default {
   components: {
-    HomeHeader,
+    Header,
     WhyChoose,
     Portfolio,
     Subscribe,

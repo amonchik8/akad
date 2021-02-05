@@ -26,42 +26,48 @@
   </section>
 </template>
 
+<script>
+export default {
+  name: "Subscribe",
+};
+</script>
+
 <style lang="scss">
 .subscribe {
   padding: 50px 24px;
   background-color: $G90;
   &__main {
-      @include flex(space-between, flex-start, row);
+    @include flex(space-between, flex-start, row);
   }
   &__title {
-      @include text($H30, 700, $N0);
-      line-height: 1.6;
-      margin-bottom: 30px;
+    @include text($H30, 700, $N0);
+    line-height: 1.6;
+    margin-bottom: 30px;
   }
   &__button {
-      color: $G90;
-      background-color: $N0;
+    color: $G90;
+    background-color: $N0;
   }
   &__form {
-      padding: 20px 25px 20px 20px;
-      background-color: $N0;
+    padding: 20px 25px 20px 20px;
+    background-color: $N0;
   }
   &__form-title {
-      @include text($H24, 700, $base-color);
-      line-height: 1.5;
-      margin-bottom: 15px;
-      max-width: 336px;
+    @include text($H24, 700, $base-color);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-width: 336px;
   }
   &__form-subtitle {
-      @include text($H16, 400, $base-color);
-      line-height: 1.5;
-      font-family: $secondary-font;
-      margin-bottom: 25px;
-      max-width: 488px;
+    @include text($H16, 400, $base-color);
+    line-height: 1.5;
+    font-family: $secondary-font;
+    margin-bottom: 25px;
+    max-width: 488px;
   }
 }
 .form {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 </style>

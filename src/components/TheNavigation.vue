@@ -3,11 +3,17 @@
     <a class="logo" href="http://">akad.</a>
     <img
       class="navigation__image"
-      src="../assets/images/menuNavigation.png"
+      src="@/assets/images/menuNavigation.png"
       alt="menu"
     />
   </nav>
 </template>
+
+<script>
+export default {
+  name: "TheNavigation",
+};
+</script>
 
 <style lang="scss">
 .navigation {

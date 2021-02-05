@@ -17,8 +17,8 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <form class="form" action="">
-            <input class="form__input" type="text" />
-            <button class="form__button">send</button>
+            <input class="form__input" type="text" placeholder="your email" />
+            <Button>send</Button>
           </form>
         </div>
       </div>
@@ -27,8 +27,12 @@
 </template>
 
 <script>
+import Button from '@/components/common/Button'
 export default {
   name: "Subscribe",
+  components: {
+    Button,
+  }
 };
 </script>
 
@@ -42,14 +46,16 @@ export default {
   &__title {
     @include text($H30, 700, $N0);
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    max-width: 490px;
   }
   &__button {
     color: $G90;
     background-color: $N0;
   }
   &__form {
-    padding: 20px 25px 20px 20px;
+    @include flex(flex-start, stretch, column);
+    padding: 15px 25px 20px;
     background-color: $N0;
   }
   &__form-title {
@@ -59,7 +65,7 @@ export default {
     max-width: 336px;
   }
   &__form-subtitle {
-    @include text($H16, 400, $base-color);
+    @include text($H16, 400, $secondary-color);
     line-height: 1.5;
     font-family: $secondary-font;
     margin-bottom: 25px;
@@ -67,7 +73,18 @@ export default {
   }
 }
 .form {
-  width: 100%;
-  display: flex;
+  @include flex(flex-start, stretch, row);
+  max-width: 100%;
+  &__input {
+    @include text($H14, 400, $base-color);
+     width: 100%;
+     padding: 12px 20px;
+     border: 1px solid $input-color;
+     outline: none;
+     @include placeholder {
+       @include text($H11, 700, $input-color);
+       text-transform: uppercase;
+     }
+  }
 }
 </style>

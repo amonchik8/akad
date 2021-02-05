@@ -21,8 +21,8 @@
             >
           </ul>
         </div>
-        <div class="main__grid">
-          <ul class="portfolio-grid" :class="{ gridFiltered: filter != 'all' }">
+        <transition-group tag="div" class="main__grid" name="portfolio-grid">
+          <ul class="portfolio-grid portfolio-grid-item" key="portfolio-grid" :class="{ gridFiltered: filter != 'all' }">
             <li
               class="portfolio-grid__item"
               v-for="image in filteredPortfolio"
@@ -35,7 +35,7 @@
               />
             </li>
           </ul>
-        </div>
+        </transition-group>
       </div>
     </div>
   </section>
@@ -56,10 +56,10 @@ export default {
       filter: "all",
       filters: [
         { value: "all", category: "All" },
-        { value: "web-design", category: "Web-design" },
-        { value: "graphic-design", category: "Graphic-design" },
+        { value: "web-design", category: "Web design" },
+        { value: "graphic-design", category: "Graphic design" },
         { value: "fashion", category: "Fashion" },
-        { value: "logo-design", category: "Logo-design" },
+        { value: "logo-design", category: "Logo design" },
         { value: "advertising", category: "Advertising" },
       ],
       portfolio: [
@@ -137,20 +137,23 @@ export default {
 .main {
   @include flex(space-between, flex-start, row);
   &__menu {
-    margin-right: 30px;
+    margin-right: 110px;
+    min-width: 190px;
   }
   &__grid {
     @include flex(center, center, row);
-    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 .portfolio-list {
   @include flex(flex-start, flex-start, column);
   &__title {
-    margin-bottom: 50px;
+    margin-top: -13px;
+    margin-bottom: 40px;
     text-align: left;
     max-width: 167px;
-    line-height: 2;
+    line-height: 1.9;
   }
   &__item {
     cursor: pointer;
@@ -218,5 +221,15 @@ export default {
 }
 .gridFiltered {
   @include flex(center, center);
+}
+.portfolio-grid-item {
+  transition: all .5s;
+}
+.portfolio-grid-enter, .portfolio-grid-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.portfolio-grid-leave-active {
+  position: absolute;
 }
 </style>

@@ -28,8 +28,10 @@ export default {
   }
   &__input:checked + .radio__name {
     background-color: $G90;
+    color: $N0;
   }
   &__name {
+    padding: 5px 20px;
   }
 }
 </style>

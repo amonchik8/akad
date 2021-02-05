@@ -105,6 +105,7 @@ export default {
   @include flex(space-between, center, row, wrap);
   max-width: 560px;
   &__item {
+    width: 230px;
   }
   &__item-title {
     @include text($H18, 700, $base-color);

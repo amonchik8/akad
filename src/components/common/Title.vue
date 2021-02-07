@@ -13,8 +13,8 @@ export default {
   @include text($H30, 700, $base-color);
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 30px;
-  &__subtitle {
+  margin-bottom: 25px;
+  &__description {
     text-align: center;
     @include text($H14, 500, $base-color);
     font-family: $secondary-font;

@@ -1,8 +1,9 @@
 <template>
   <section class="portfolio">
+    <a class="portfolio__anchor" name='portfolio'></a>
     <div class="container portfolio__container">
       <Title>our portfolio</Title>
-      <p class="title__subtitle portfolio__subtitle">
+      <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -130,7 +131,10 @@ export default {
   &__container {
     padding: 75px 24px 150px;
   }
-  &__subtitle {
+  &__anchor {
+    display: flex;
+  }
+  &__description {
     max-width: 765px;
   }
 }

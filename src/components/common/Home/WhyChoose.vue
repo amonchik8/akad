@@ -2,13 +2,14 @@
   <section class="why-choose">
     <div class="container why-choose__container">
       <Title>why choose us</Title>
-      <p class="title__subtitle why-choose__subtitle">
+      <p class="title__description why-choose__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <div class="block">
-          <ul class="why-choose-list">
-            <li class="why-choose-list__item">
+        <ul class="why-choose-list">
+          <div class="why-choose-list__row">
+            <li class="why-choose-list__item why-choose-list--col">
               <ion-icon
                 class="why-choose__icon"
                 name="infinite-outline"
@@ -38,7 +39,9 @@
                 >Integrated ad Companies</span
               >
             </li>
-            <li class="why-choose-list__item">
+          </div>
+          <div class="why-choose-list__row">
+            <li class="why-choose-list__item why-choose-list--col">
               <ion-icon class="why-choose__icon" name="cart-outline"></ion-icon>
               <h3 class="why-choose-list__item-title">e-commerce</h3>
               <span class="why-choose-list__item-body">Prototyping</span>
@@ -63,7 +66,8 @@
                 >Integrated ad Companies</span
               >
             </li>
-          </ul>
+          </div>
+        </ul>
         <div class="block__image-wrapper">
           <img
             class="block__image"
@@ -97,15 +101,20 @@ export default {
     @include text($H36, 400, $base-color);
     margin-bottom: 10px;
   }
-  &__subtitle {
+  &__description {
     max-width: 717px;
   }
 }
 .why-choose-list {
   @include flex(space-between, center, row, wrap);
-  max-width: 560px;
-  &__item {
-    width: 230px;
+  &--col {
+    margin-right: 135px;
+  }
+  &__row {
+    @include flex(flex-start, center, row);
+    &:not(:last-of-type) {
+      margin-bottom: 60px;
+    }
   }
   &__item-title {
     @include text($H18, 700, $base-color);
@@ -122,17 +131,16 @@ export default {
 .block {
   @include flex(space-between, center, row);
   &__image-wrapper {
-    width: 40%;
-    padding-bottom: 42.1%;
+    width: 63%;
+    padding-bottom: 36.5%;
     position: relative;
   }
   &__image {
     position: absolute;
     z-index: 2;
     width: 100%;
-    max-width: 457px;
     height: 100%;
-    max-height: 500px;
+    max-height: 414px;
     top: 0;
     left: 0;
     right: 0;

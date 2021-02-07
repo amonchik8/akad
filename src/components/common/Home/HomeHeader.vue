@@ -1,10 +1,10 @@
 <template>
-  <header class="header">
-    <div class="container header__container">
-      <TheNavigation></TheNavigation>
-      <div class="header__title-wrapper">
-        <h1 class="header__title">creative agency</h1>
-        <p class="header__subtitle">
+  <header class="home-header">
+    <div class="container home-header__container">
+      <MenuPanel class="home-header__panel"></MenuPanel>
+      <div class="home-header__title-wrapper">
+        <h1 class="home-header__title">creative agency</h1>
+        <p class="home-header__subtitle">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -21,15 +21,17 @@
           <div class="content-box__title-wrapper">
             <h2 class="content-box__title">history of agency</h2>
           </div>
-          <p class="content-box__text">
-            Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-            consectetur, adipisci velit, sed quia non numquam eius modi tempora
-            incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-            enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut aliquid ex ea commodi modi tempora
-            incidunt ut labore.
-          </p>
-          <Button class="header__button">read more</Button>
+          <Content>
+              <p class="home-header__content">
+                Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut
+                aliquid ex ea commodi modi tempora incidunt ut labore.
+              </p>
+          </Content>
+          <Button>read more</Button>
         </div>
       </div>
     </div>
@@ -37,20 +39,22 @@
 </template>
 
 <script>
-import TheNavigation from "@/components/TheNavigation";
-import Button from "../Button";
+import MenuPanel from "../MenuPanel.vue";
+import Button from "../Button.vue";
+import Content from "../Content.vue";
 
 export default {
   name: "Header",
   components: {
     Button,
-    TheNavigation,
+    MenuPanel,
+    Content,
   },
 };
 </script>
 
 <style lang="scss">
-.header {
+.home-header {
   background-image: url("../../../assets/images/bgHome.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -58,8 +62,8 @@ export default {
   &__container {
     padding: 45px 24px 75px;
   }
-  &__navigation {
-    margin-bottom: 230px;
+  &__panel {
+    margin-bottom: 210px;
   }
   &__title {
     @include text($H48, 700, $base-color);
@@ -89,6 +93,9 @@ export default {
     max-width: 540px;
     margin-bottom: 125px;
     font-family: $secondary-font;
+  }
+  &__content {
+    max-width: 522px;
   }
 }
 .content-box {
@@ -120,15 +127,8 @@ export default {
   &__title {
     @include text($H30, 700, $base-color);
     text-transform: uppercase;
-    line-height: 1.6;
-    text-align: left;
-  }
-  &__text {
-    max-width: 522px;
-    @include text($H16, 400, $base-color);
-    line-height: 1.875;
     margin-bottom: 25px;
-    font-family: $secondary-font;
+    text-align: left;
   }
 }
 </style>

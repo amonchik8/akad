@@ -18,7 +18,7 @@
           </p>
           <form class="form" action="">
             <input class="form__input" type="text" placeholder="your email" />
-            <Button>send</Button>
+            <Button class="form__button">send</Button>
           </form>
         </div>
       </div>
@@ -27,18 +27,20 @@
 </template>
 
 <script>
-import Button from '@/components/common/Button'
+import Button from "./Button.vue";
 export default {
   name: "Subscribe",
   components: {
     Button,
-  }
+  },
 };
 </script>
 
 <style lang="scss">
 .subscribe {
-  padding: 50px 24px;
+  &__container {
+    padding: 50px 24px;
+  }
   background-color: $G90;
   &__main {
     @include flex(space-between, flex-start, row);
@@ -77,14 +79,17 @@ export default {
   max-width: 100%;
   &__input {
     @include text($H14, 400, $base-color);
-     width: 100%;
-     padding: 12px 20px;
-     border: 1px solid $input-color;
-     outline: none;
-     @include placeholder {
-       @include text($H11, 700, $input-color);
-       text-transform: uppercase;
-     }
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid $input-color;
+    outline: none;
+    @include placeholder {
+      @include text($H11, 700, $input-color);
+      text-transform: uppercase;
+    }
+  }
+  &__button {
+    // width: 100%;
   }
 }
 </style>

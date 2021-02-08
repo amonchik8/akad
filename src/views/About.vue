@@ -1,6 +1,13 @@
 <template>
   <section>
-    <Header></Header>
+    <Header>
+      <template #title>
+            about
+        </template>
+        <template #subtitle>
+            home / about
+        </template>
+    </Header>
     <Main></Main>
     <Benefits></Benefits>
     <Team></Team>

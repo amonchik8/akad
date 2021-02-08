@@ -1,5 +1,29 @@
 <template>
-    <div>
-        <h2>Contact</h2>
-    </div>
+  <section>
+    <Header>
+        <template #title>
+            contact us
+        </template>
+        <template #subtitle>
+            home / contact
+        </template>
+    </Header>
+    <Subscribe></Subscribe>
+    <Footer></Footer>
+  </section>
 </template>
+
+<script>
+import Footer from "../components/common/Footer.vue";
+import Subscribe from "../components/common/Subscribe.vue";
+import Header from "../components/common/Header.vue";
+
+export default {
+  name: "Contact",
+  components: {
+    Footer,
+    Subscribe,
+    Header,
+  },
+};
+</script>

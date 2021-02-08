@@ -3,8 +3,8 @@
     <div class="header__back">
       <div class="container header__container">
         <MenuPanel class="header__panel"></MenuPanel>
-        <Title class="header__title">about us</Title>
-        <Subtitle>home / about</Subtitle>
+        <Title class="header__title"><slot name="title" /></Title>
+        <Subtitle><slot name="subtitle" /></Subtitle>
       </div>
     </div>
   </section>

@@ -17,22 +17,22 @@
             alt="image"
           />
         </div>
-        <div class="content-box__article">
-          <div class="content-box__title-wrapper">
-            <h2 class="content-box__title">history of agency</h2>
-          </div>
-          <Content>
-              <p class="home-header__content">
-                Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit, sed quia non numquam eius modi
-                tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem. Ut enim ad minima veniam, quis nostrum
-                exercitationem ullam corporis suscipit laboriosam, nisi ut
-                aliquid ex ea commodi modi tempora incidunt ut labore.
-              </p>
-          </Content>
-          <Button>read more</Button>
-        </div>
+        <TextBlock class="content-box__body">
+          <template #title>
+            <h2 class="content-box__title">HISTORY OF AGENCY</h2>
+          </template>
+          <template #content>
+            <p class="content-box__content">
+              Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+              consectetur, adipisci velit, sed quia non numquam eius modi
+              tempora incidunt ut labore et dolore magnam aliquam quaerat
+              voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+              ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+              modi tempora incidunt ut labore.
+            </p>
+            <Button class="content-box__button">read more</Button>
+          </template>
+        </TextBlock>
       </div>
     </div>
   </header>
@@ -41,14 +41,14 @@
 <script>
 import MenuPanel from "../MenuPanel.vue";
 import Button from "../Button.vue";
-import Content from "../Content.vue";
+import TextBlock from "../TextBlock.vue";
 
 export default {
   name: "Header",
   components: {
     Button,
     MenuPanel,
-    Content,
+    TextBlock,
   },
 };
 </script>
@@ -94,12 +94,13 @@ export default {
     margin-bottom: 125px;
     font-family: $secondary-font;
   }
-  &__content {
-    max-width: 522px;
-  }
 }
 .content-box {
   @include flex(space-between, center, row);
+  &__body {
+    @include flex(flex-start, flex-start, column);
+    position: relative;
+  }
   &__image-wrapper {
     width: 50%;
     padding-bottom: 35.2%;
@@ -118,17 +119,30 @@ export default {
     bottom: 0;
     object-fit: cover;
   }
-  &__article {
-    @include flex(center, flex-end, column);
+  &__content {
+    max-width: 522px;
+    margin-bottom: 30px;
   }
-  &__title-wrapper {
-    width: 100%;
+  &__button {
+    position: absolute;
+    right: 0;
   }
   &__title {
     @include text($H30, 700, $base-color);
     text-transform: uppercase;
-    margin-bottom: 25px;
     text-align: left;
+    position: relative;
+    z-index: 1;
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      width: 70px;
+      height: 20px;
+      background-color: $G90;
+      left: 0;
+      bottom: -1px;
+    }
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section class="why-choose">
     <div class="container why-choose__container">
-      <Title>why choose us</Title>
+      <Title class="why-choose__title">why choose us</Title>
       <p class="title__description why-choose__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -103,6 +103,22 @@ export default {
   }
   &__description {
     max-width: 717px;
+  }
+  &__title {
+    max-width: 258px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    position: relative;
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      width: 70px;
+      height: 20px;
+      background-color: $G90;
+      left: 0;
+      bottom: -1px;
+    }
   }
 }
 .why-choose-list {

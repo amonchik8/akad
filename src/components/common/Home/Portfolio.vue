@@ -2,7 +2,7 @@
   <section class="portfolio">
     <a class="portfolio__anchor" name='portfolio'></a>
     <div class="container portfolio__container">
-      <Title>our portfolio</Title>
+      <Title class="portfolio__title">our portfolio</Title>
       <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -136,6 +136,22 @@ export default {
   }
   &__description {
     max-width: 765px;
+  }
+  &__title {
+    max-width: 258px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    position: relative;
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      width: 70px;
+      height: 20px;
+      background-color: $G90;
+      left: 0;
+      bottom: -1px;
+    }
   }
 }
 .main {

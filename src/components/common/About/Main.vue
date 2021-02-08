@@ -66,6 +66,17 @@ export default {
   }
   &__title {
     @include text($H30, 700, $base-color);
+    position: relative;
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      width: 70px;
+      height: 20px;
+      background-color: $G90;
+      left: 0;
+      bottom: -1px;
+    }
   }
   &__subtitle {
     @include text($H14, 800, $base-color);

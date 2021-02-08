@@ -1,36 +1,51 @@
 <template>
   <div class="benefit">
     <div class="benefit__title">
-      <div class="benefit__icon-wrapper">icon</div>
-      <Title class="benefit__title">FULLY RESPONSIVE</Title>
+      <div class="benefit__icon-wrapper">
+        <ion-icon
+          :name="name"
+          class="benefit__icon"
+        ></ion-icon>
+      </div>
+      <Title class="benefit__title"><slot name="title" /></Title>
     </div>
-    <Content class="benefit__content"
-      >Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-      ridiculus mus. In eleifend suscipit enim, eu commodo neque molestie
-      vitae.</Content
-    >
+    <Content class="benefit__content"><slot name="content" /></Content>
   </div>
 </template>
 
 <script>
 import Content from "../Content.vue";
 import Title from "../Title.vue";
+
 export default {
   components: { Title, Content },
   name: "Benefit",
+  props: {
+    name: String 
+  }
 };
 </script>
 
 <style lang="scss">
 .benefit {
-    &__title {
-        @include text($H18, 700, $base-color);
-    }
-    &__icon-wrapper {
-        background-color: $G90;
-    }
-    &__content {
-        max-width: 358px;
-    }
+  @include flex(center, flex-start, column);
+  max-width: 362px;
+  padding: 0 12px;
+  margin-bottom: 65px;
+  &__title {
+    @include flex(center, center, row);
+    @include text($H18, 700, $base-color);
+    margin-bottom: 5px;
+  }
+  &__icon-wrapper {
+    @include size(40px);
+    @include flex(center, center);
+    margin-right: 20px;
+    background-color: $G90;
+    margin-bottom: 5px;
+  }
+  &__icon {
+    @include text($H30, 400, $N0);
+  }
 }
 </style>

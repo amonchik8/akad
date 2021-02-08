@@ -89,7 +89,7 @@ export default {
     }
   }
   &__button {
-    // width: 100%;
+    padding: 17px 48.05px;
   }
 }
 </style>

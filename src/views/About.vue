@@ -1,26 +1,21 @@
 <template>
   <section>
     <Header>
-      <template #title>
-            about
-        </template>
-        <template #subtitle>
-            home / about
-        </template>
+      <template #title> about </template>
+      <template #subtitle> home / about </template>
     </Header>
-    <Main></Main>
-    <Benefits></Benefits>
-    <Team></Team>
-    <Testimonials></Testimonials>
-    <Subscribe></Subscribe>
-    <Footer></Footer>
+    <TheContainer>
+      <Main></Main>
+      <Benefits></Benefits>
+      <Team></Team>
+      <Testimonials></Testimonials>
+    </TheContainer>
+    <TheSubscribe></TheSubscribe>
+    <TheFooter></TheFooter>
   </section>
 </template>
 
 <script>
-import Footer from "../components/common/Footer.vue";
-import Subscribe from "../components/common/Subscribe.vue";
-import Header from "../components/common/Header.vue";
 import Main from "../components/common/About/Main.vue";
 import Benefits from "../components/common/About/Benefits.vue";
 import Team from "../components/common/About/Team.vue";
@@ -29,13 +24,10 @@ import Testimonials from "../components/common/About/Testimonials.vue";
 export default {
   name: "About",
   components: {
-    Footer,
-    Subscribe,
-    Header,
     Main,
     Benefits,
     Team,
-    Testimonials
+    Testimonials,
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <section class="footer">
-    <div class="container footer__container">
+    <div class="footer__container">
       <div class="footer__main">
         <TheNavigation></TheNavigation>
         <div class="footer__author">
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import TheNavigation from "../TheNavigation.vue";
-import Social from "./Social.vue";
+import TheNavigation from "./TheNavigation.vue";
+import Social from "./common/Social.vue";
 
 export default {
   components: { Social, TheNavigation },
-  name: "Footer",
+  name: "TheFooter",
 };
 </script>
 
@@ -26,6 +26,9 @@ export default {
 .footer {
   font-family: $secondary-font;
   &__container {
+    max-width: 1188px;
+    width: 100%;
+    margin: 0 auto;
     padding: 50px 24px;
   }
   &__main {

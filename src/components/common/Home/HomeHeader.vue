@@ -1,10 +1,10 @@
 <template>
   <header class="home-header">
-    <div class="container home-header__container">
+    <div class="home-header__container">
       <MenuPanel class="home-header__panel"></MenuPanel>
       <div class="home-header__title-wrapper">
         <h1 class="home-header__title">creative agency</h1>
-        <p class="home-header__subtitle">
+        <p class="home-header__description">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -19,7 +19,7 @@
         </div>
         <TextBlock class="content-box__body">
           <template #title>
-            <h2 class="content-box__title">HISTORY OF AGENCY</h2>
+            HISTORY OF AGENCY
           </template>
           <template #content>
             <p class="content-box__content">
@@ -60,6 +60,9 @@ export default {
   background-position: center;
   background-size: cover;
   &__container {
+    max-width: 1188px;
+    width: 100%;
+    margin: 0 auto;
     padding: 45px 24px 75px;
   }
   &__panel {
@@ -85,7 +88,7 @@ export default {
       top: -40px;
     }
   }
-  &__subtitle {
+  &__description {
     @include text($H16, 400, $base-color);
     text-align: center;
     line-height: 1.5;
@@ -126,23 +129,6 @@ export default {
   &__button {
     position: absolute;
     right: 0;
-  }
-  &__title {
-    @include text($H30, 700, $base-color);
-    text-transform: uppercase;
-    text-align: left;
-    position: relative;
-    z-index: 1;
-    &:after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      width: 70px;
-      height: 20px;
-      background-color: $G90;
-      left: 0;
-      bottom: -1px;
-    }
   }
 }
 </style>

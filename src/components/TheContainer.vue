@@ -1,5 +1,7 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -13,5 +15,6 @@ export default {
   max-width: 1188px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 24px;
 }
 </style>

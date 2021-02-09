@@ -22,4 +22,18 @@ export default {
     margin: 0 auto 100px;
   }
 }
+.title-decoration {
+  position: relative;
+    z-index: 1;
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      width: 70px;
+      height: 20px;
+      background-color: $G90;
+      left: 0;
+      bottom: -1px;
+    }
+}
 </style>

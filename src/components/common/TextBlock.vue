@@ -1,6 +1,6 @@
 <template>
   <div class="textblock">
-    <Title><slot name="title" /></Title>
+    <Title class="title-decoration"><slot name="title" /></Title>
     <Subtitle><slot name="subtitle" /></Subtitle>
     <Content><slot name="content" /></Content>
   </div>

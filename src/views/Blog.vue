@@ -1,29 +1,17 @@
 <template>
   <section>
     <Header>
-        <template #title>
-            blog posts
-        </template>
-        <template #subtitle>
-            home / blog
-        </template>
+      <template #title> blog posts </template>
+      <template #subtitle> home / blog </template>
     </Header>
-    <Subscribe></Subscribe>
-    <Footer></Footer>
+    <TheSubscribe></TheSubscribe>
+    <TheFooter></TheFooter>
   </section>
 </template>
 
 <script>
-import Footer from "../components/common/Footer.vue";
-import Subscribe from "../components/common/Subscribe.vue";
-import Header from "../components/common/Header.vue";
-
 export default {
   name: "Blog",
-  components: {
-    Footer,
-    Subscribe,
-    Header,
-  },
+  components: {},
 };
 </script>

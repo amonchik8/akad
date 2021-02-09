@@ -1,6 +1,6 @@
 <template>
   <section class="team">
-    <div class="container team__container">
+    <div class="team__container">
       <Title class="team__title">the dream team</Title>
       <p class="title__description team__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -81,7 +81,7 @@ export default {
 .team {
   &__container {
     @include flex(center, center, column);
-    padding: 150px 24px 0;
+    padding-top: 150px;
   }
   &__title {
     position: relative;

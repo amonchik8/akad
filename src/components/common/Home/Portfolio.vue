@@ -1,8 +1,8 @@
 <template>
   <section class="portfolio">
     <a class="portfolio__anchor" name='portfolio'></a>
-    <div class="container portfolio__container">
-      <Title class="portfolio__title">our portfolio</Title>
+    <div class="portfolio__container">
+      <Title class="title-decoration">our portfolio</Title>
       <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -129,29 +129,14 @@ export default {
 <style lang="scss">
 .portfolio {
   &__container {
-    padding: 75px 24px 150px;
+    @include flex(center, center, column);
+    padding: 75px 0 150px;
   }
   &__anchor {
     display: flex;
   }
   &__description {
     max-width: 765px;
-  }
-  &__title {
-    max-width: 258px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    position: relative;
-    &:after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      width: 70px;
-      height: 20px;
-      background-color: $G90;
-      left: 0;
-      bottom: -1px;
-    }
   }
 }
 .main {

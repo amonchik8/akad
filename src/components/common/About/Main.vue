@@ -1,10 +1,8 @@
 <template>
   <section class="about">
-    <div class="container about__container">
+    <div class="about__container">
       <TextBlock>
-        <template #title>
-          <h2 class="about__title">about us</h2>
-        </template>
+        <template #title> about us </template>
         <template #subtitle>
           <h3 class="about__subtitle">We are awesome</h3>
         </template>
@@ -23,9 +21,7 @@
         </template>
       </TextBlock>
       <TextBlock>
-        <template #title>
-          <h2 class="about__title">What We Do</h2>
-        </template>
+        <template #title> What We Do </template>
         <template #subtitle>
           <h3 class="about__subtitle">Creative & Digital</h3>
         </template>
@@ -62,21 +58,7 @@ export default {
 .about {
   &__container {
     @include flex(space-between, center, row);
-    padding: 150px 24px 15px;
-  }
-  &__title {
-    @include text($H30, 700, $base-color);
-    position: relative;
-    &:after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      width: 70px;
-      height: 20px;
-      background-color: $G90;
-      left: 0;
-      bottom: -1px;
-    }
+    padding: 150px 0 15px;
   }
   &__subtitle {
     @include text($H14, 800, $base-color);

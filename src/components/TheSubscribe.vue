@@ -1,6 +1,6 @@
 <template>
   <section class="subscribe">
-    <div class="container subscribe__container">
+    <div class="subscribe__container">
       <div class="subscribe__main">
         <div class="subscribe__title-wrapper">
           <h2 class="subscribe__title">
@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
+import Button from "./common/Button.vue";
 export default {
-  name: "Subscribe",
+  name: "TheSubscribe",
   components: {
     Button,
   },
@@ -39,6 +39,9 @@ export default {
 <style lang="scss">
 .subscribe {
   &__container {
+    max-width: 1188px;
+    width: 100%;
+    margin: 0 auto;
     padding: 50px 24px;
   }
   background-color: $G90;

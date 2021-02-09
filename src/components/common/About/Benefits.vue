@@ -1,7 +1,7 @@
 <template>
   <section class="benefits">
-    <div class="container benefits__container">
-      <Title class="benefits__title">some benefits</Title>
+    <div class="benefits__container">
+      <Title class="title-decoration">some benefits</Title>
       <p class="title__description benefits__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -82,21 +82,7 @@ export default {
 .benefits {
   &__container {
     @include flex(center, center, column);
-    padding: 150px 24px 15px;
-  }
-  &__title {
-    @include text($H30, 700, $base-color);
-    position: relative;
-    &:after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      width: 70px;
-      height: 20px;
-      background-color: $G90;
-      left: 0;
-      bottom: -1px;
-    }
+    padding: 150px 0 15px;
   }
   &__description {
     max-width: 717px;

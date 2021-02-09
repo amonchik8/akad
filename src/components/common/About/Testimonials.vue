@@ -1,6 +1,6 @@
 <template>
   <section class="testimonials">
-    <div class="container testimonials__container">
+    <div class="testimonials__container">
       <div class="testimonials__main">
        <Slider></Slider>
         <div class="testimonials-grid">
@@ -63,7 +63,7 @@ export default {
 .testimonials {
   &__container {
     @include flex(center, center, row);
-    padding: 150px 24px;
+    padding: 150px 0;
   }
   &__main {
       @include flex(space-between, center, row);

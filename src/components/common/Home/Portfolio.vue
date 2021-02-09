@@ -66,39 +66,39 @@ export default {
       portfolio: [
         {
           category: "Graphic-design",
-          imageUrl: require("@/assets/images/imageGrid1.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid1.png"),
         },
         {
           category: "Graphic-design",
-          imageUrl: require("@/assets/images/imageGrid2.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid2.png"),
         },
         {
           category: "Web-design",
-          imageUrl: require("@/assets/images/imageGrid3.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid3.png"),
         },
         {
           category: "Fashion",
-          imageUrl: require("@/assets/images/imageGrid4.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid4.png"),
         },
         {
           category: "Logo-design",
-          imageUrl: require("@/assets/images/imageGrid5.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid5.png"),
         },
         {
           category: "Fashion",
-          imageUrl: require("@/assets/images/imageGrid6.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid6.png"),
         },
         {
           category: "Fashion",
-          imageUrl: require("@/assets/images/imageGrid7.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid7.png"),
         },
         {
           category: "Advertising",
-          imageUrl: require("@/assets/images/imageGrid8.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid8.png"),
         },
         {
           category: "Advertising",
-          imageUrl: require("@/assets/images/imageGrid9.png"),
+          imageUrl: require("@/assets/images/Home/imageGrid9.png"),
         },
       ],
     };

@@ -71,7 +71,7 @@
         <div class="block__image-wrapper">
           <img
             class="block__image"
-            src="@/assets/images/imageWhyChoose.png"
+            src="@/assets/images/Home/imageWhyChoose.png"
             alt="image"
           />
         </div>
@@ -97,7 +97,6 @@ export default {
     @include flex(center, center, column);
     padding: 75px 0;
   }
-  @include flex(center, center, column);
   &__icon {
     @include text($H36, 400, $base-color);
     margin-bottom: 10px;

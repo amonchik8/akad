@@ -126,6 +126,7 @@ $base-font-size: 16px;
     @return #{$remSize}rem;
 }
 
+$H60: calcRem(60px);
 $H48: calcRem(48px);
 $H36: calcRem(36px); 
 $H30: calcRem(30px);

@@ -31,27 +31,27 @@ export default {
       logo: [
         {
           id: 1,
-          image: require("@/assets/images/testimonials1.png"),
+          image: require("@/assets/images/About/testimonials1.png"),
         },
         {
           id: 2,
-          image: require("@/assets/images/testimonials2.png"),
+          image: require("@/assets/images/About/testimonials2.png"),
         },
         {
           id: 3,
-          image: require("@/assets/images/testimonials3.png"),
+          image: require("@/assets/images/About/testimonials3.png"),
         },
         {
           id: 4,
-          image: require("@/assets/images/testimonials4.png"),
+          image: require("@/assets/images/About/testimonials4.png"),
         },
         {
           id: 5,
-          image: require("@/assets/images/testimonials5.png"),
+          image: require("@/assets/images/About/testimonials5.png"),
         },
         {
           id: 6,
-          image: require("@/assets/images/testimonials6.png"),
+          image: require("@/assets/images/About/testimonials6.png"),
         },
       ],
     };

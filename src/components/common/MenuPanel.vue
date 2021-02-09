@@ -3,7 +3,7 @@
     <a class="logo" href="http://">akad.</a>
     <img
       class="navigation__image"
-      src="@/assets/images/menuNavigation.png"
+      src="@/assets/images/Home/menuNavigation.png"
       alt="menu"
     />
   </nav>

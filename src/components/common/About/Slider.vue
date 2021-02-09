@@ -34,22 +34,22 @@ export default {
       testimonials: [
         {
           name: "Stormtrooper",
-          avatar: require("@/assets/images/slideAvatarStormtrooper.png"),
+          avatar: require("@/assets/images/About/slideAvatarStormtrooper.png"),
           testimonial: `Let me see your identification. We don’t need to see his identification. These aren’t the droids we’re looking for. `,
         },
         {
           name: "Darth Maul",
-          avatar: require("@/assets/images/slideAvatarDarthMaul.png"),
+          avatar: require("@/assets/images/About/slideAvatarDarthMaul.png"),
           testimonial: `At last we will reveal ourselves to the Jedi. At last we will have revenge.`,
         },
         {
           name: "Boba Fet",
-          avatar: require("@/assets/images/slideAvatarBobaFett.png"),
+          avatar: require("@/assets/images/About/slideAvatarBobaFett.png"),
           testimonial: `Put Captain Solo in the cargo hold.`,
         },
         {
           name: "Chewbacca",
-          avatar: require("@/assets/images/slideAvatarChewbacca.png"),
+          avatar: require("@/assets/images/About/slideAvatarChewbacca.png"),
           testimonial: `WWWRRRRRRGWWWRRRR. AARARRRGWWWH. RAWRGWAWGGR!`,
         },
       ],

@@ -13,7 +13,7 @@
         <div class="content-box__image-wrapper">
           <img
             class="content-box__image"
-            src="@/assets/images/imageHome.png"
+            src="@/assets/images/Home/imageHome.png"
             alt="image"
           />
         </div>
@@ -55,7 +55,7 @@ export default {
 
 <style lang="scss">
 .home-header {
-  background-image: url("../../../assets/images/bgHome.png");
+  background-image: url("../../../assets/images/Home/bgHome.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

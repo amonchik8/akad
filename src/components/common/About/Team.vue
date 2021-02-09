@@ -41,35 +41,35 @@ export default {
       team: [
         {
           id: 1,
-          photo: require("@/assets/images/team1.png"),
+          photo: require("@/assets/images/About/team1.png"),
         },
         {
           id: 2,
-          photo: require("@/assets/images/team2.png"),
+          photo: require("@/assets/images/About/team2.png"),
         },
         {
           id: 3,
-          photo: require("@/assets/images/team3.png"),
+          photo: require("@/assets/images/About/team3.png"),
         },
         {
           id: 4,
-          photo: require("@/assets/images/team4.png"),
+          photo: require("@/assets/images/About/team4.png"),
         },
         {
           id: 5,
-          photo: require("@/assets/images/team5.png"),
+          photo: require("@/assets/images/About/team5.png"),
         },
         {
           id: 6,
-          photo: require("@/assets/images/team6.png"),
+          photo: require("@/assets/images/About/team6.png"),
         },
         {
           id: 7,
-          photo: require("@/assets/images/team7.png"),
+          photo: require("@/assets/images/About/team7.png"),
         },
         {
           id: 8,
-          photo: require("@/assets/images/team8.png"),
+          photo: require("@/assets/images/About/team8.png"),
         },
       ],
     };

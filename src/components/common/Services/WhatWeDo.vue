@@ -83,6 +83,9 @@ export default {
     @include flex(center, center, column);
     padding: 75px 0;
   }
+  &__description {
+    max-width: 717px
+  }
   &__main {
     @include flex(space-between, flex-start, row);
     width: 100%;
@@ -120,7 +123,8 @@ export default {
     height: auto;
   }
   &__we-do {
-    @include flex(center, center, row);
+    @include flex(space-between, center, row);
+    width: 100%;
     padding: 150px 0 0;
   }
 }

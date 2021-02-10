@@ -16,9 +16,20 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <form class="form" action="">
-            <Input />
-            <Button class="form__button">send</Button>
+          <form class="form" @submit.prevent="onSubmit">
+            <Input
+              v-model="email"
+              :has-error="emailHasError"
+              :error-message="emailErrorMessage"
+              :valid="emailValid"
+              label="e"
+              type="email"
+              placeholder="your email"
+              required
+              @blur="emailHasError = !emailValid"
+              @focus="emailHasError = false"
+            />
+            <Button :disabled="disabled" class="form__button">send</Button>
           </form>
         </div>
       </div>
@@ -34,6 +45,51 @@ export default {
   components: {
     Button,
     Input,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+      emailHasError: false,
+      passwordHasError: false,
+    };
+  },
+  computed: {
+    emailValid() {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.email).toLowerCase());
+    },
+    passwordValid() {
+      return this.password.length >= 4;
+    },
+    emailErrorMessage() {
+      switch (true) {
+        case !this.email:
+          return "Enter email";
+        case !this.emailValid:
+          return "Invalid email";
+        default:
+          return "";
+      }
+    },
+    passwordErrorMessage() {
+      switch (true) {
+        case !this.password:
+          return "Enter password";
+        case !this.passwordValid:
+          return "Invalid format too short";
+        default:
+          return "";
+      }
+    },
+    disabled() {
+      return !this.emailValid;
+    },
+  },
+  methods: {
+    onSubmit() {
+      alert("Send");
+    },
   },
 };
 </script>
@@ -80,7 +136,7 @@ export default {
   }
 }
 .form {
-  @include flex(flex-start, stretch, row);
+  @include flex(flex-start, flex-end, row);
   max-width: 100%;
   &__button {
     padding: 17px 48.05px;

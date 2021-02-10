@@ -1,6 +1,6 @@
 <template>
   <section class="plans__container">
-    <Title class="title-decoration">pricing plans</Title>
+    <Title class="title-decoration" title="pricing plans" />
     <p class="title__description plans__description">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.

@@ -1,8 +1,8 @@
 <template>
   <div class="textblock">
-    <Title class="title-decoration"><slot name="title" /></Title>
-    <Subtitle><slot name="subtitle" /></Subtitle>
-    <Content><slot name="content" /></Content>
+    <Title class="title-decoration" :title=title />
+    <Subtitle class="textblock__subtitle">{{ subtitle }}</Subtitle>
+    <Content>{{ content }}</Content>
   </div>
 </template>
 
@@ -18,14 +18,19 @@ export default {
     Subtitle,
     Content,
   },
+  props: {
+    title: String,
+    subtitle: String,
+    content: String,
+  }
 };
 </script>
 
 <style lang="scss">
 .textblock {
   @include flex(flex-start, flex-start, column);
-  &:not(:last-child) {
-    margin-right: 35px;
+  &__subtitle {
+    margin-bottom: 10px;
   }
 }
 </style>

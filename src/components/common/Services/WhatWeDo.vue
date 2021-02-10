@@ -1,6 +1,6 @@
 <template>
   <section class="what-we-do__container">
-    <Title class="title-decoration">what we do</Title>
+    <Title class="title-decoration" title="what we do" />
     <p class="title__description what-we-do__description">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.

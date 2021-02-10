@@ -1,9 +1,6 @@
 <template>
   <section>
-    <Header>
-      <template #title> about </template>
-      <template #subtitle> home / about </template>
-    </Header>
+    <Header title="about" subtitle="home / about" />
     <TheContainer>
       <Main></Main>
       <Benefits></Benefits>

@@ -1,7 +1,7 @@
 <template>
   <header class="home-header">
     <div class="home-header__container">
-      <MenuPanel class="home-header__panel"></MenuPanel>
+      <MenuPanel class="home-header__panel" />
       <div class="home-header__title-wrapper">
         <h1 class="home-header__title">creative agency</h1>
         <p class="home-header__description">
@@ -9,30 +9,27 @@
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div class="content-box">
-        <div class="content-box__image-wrapper">
+      <div class="history">
+        <div class="history__image-wrapper">
           <img
-            class="content-box__image"
+            class="history__image"
             src="@/assets/images/Home/imageHome.png"
             alt="image"
           />
         </div>
-        <TextBlock class="content-box__body">
-          <template #title>
-            HISTORY OF AGENCY
-          </template>
-          <template #content>
-            <p class="content-box__content">
-              Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+        <div class="history__text-block-wrapper">
+          <TextBlock
+            class="history__text-block"
+            title="HISTORY OF AGENCY"
+            content="Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
               consectetur, adipisci velit, sed quia non numquam eius modi
               tempora incidunt ut labore et dolore magnam aliquam quaerat
               voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
               ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-              modi tempora incidunt ut labore.
-            </p>
-            <Button class="content-box__button">read more</Button>
-          </template>
-        </TextBlock>
+              modi tempora incidunt ut labore."
+          />
+          <Button class="history__button">read more</Button>
+        </div>
       </div>
     </div>
   </header>
@@ -44,7 +41,7 @@ import Button from "../Button.vue";
 import TextBlock from "../TextBlock.vue";
 
 export default {
-  name: "Header",
+  name: "HomeHeader",
   components: {
     Button,
     MenuPanel,
@@ -98,12 +95,8 @@ export default {
     font-family: $secondary-font;
   }
 }
-.content-box {
+.history {
   @include flex(space-between, center, row);
-  &__body {
-    @include flex(flex-start, flex-start, column);
-    position: relative;
-  }
   &__image-wrapper {
     width: 50%;
     padding-bottom: 35.2%;
@@ -122,13 +115,12 @@ export default {
     bottom: 0;
     object-fit: cover;
   }
-  &__content {
-    max-width: 522px;
-    margin-bottom: 30px;
+  &__text-block-wrapper {
+    @include flex(flex-end, flex-end, column);
+    max-width: 450px;
   }
-  &__button {
-    position: absolute;
-    right: 0;
+  &__text-block {
+    margin-bottom: 20px;
   }
 }
 </style>

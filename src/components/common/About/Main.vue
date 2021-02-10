@@ -1,14 +1,7 @@
 <template>
   <section class="about">
     <div class="about__container">
-      <TextBlock>
-        <template #title> about us </template>
-        <template #subtitle>
-          <h3 class="about__subtitle">We are awesome</h3>
-        </template>
-        <template #content>
-          <p class="about__content">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+      <TextBlock class="about__text-block" title="about us" subtitle="We are awesome" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
             volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
             ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
@@ -16,18 +9,8 @@
             velit esse molestie consequat, vel illum dolore eu feugiat nulla
             facilisis at vero eros et accumsan et iusto odio dignissim qui
             blandit praesent luptatum zzril delenit augue duis dolore te feugait
-            nulla facilisi.
-          </p>
-        </template>
-      </TextBlock>
-      <TextBlock>
-        <template #title> What We Do </template>
-        <template #subtitle>
-          <h3 class="about__subtitle">Creative & Digital</h3>
-        </template>
-        <template #content>
-          <p class="about__content">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nulla facilisi." />
+      <TextBlock class="about__text-block" title="What We Do" subtitle="Creative & Digital" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
             volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
             ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
@@ -35,10 +18,7 @@
             velit esse molestie consequat, vel illum dolore eu feugiat nulla
             facilisis at vero eros et accumsan et iusto odio dignissim qui
             blandit praesent luptatum zzril delenit augue duis dolore te feugait
-            nulla facilisi.
-          </p>
-        </template>
-      </TextBlock>
+            nulla facilisi." />
     </div>
   </section>
 </template>
@@ -64,8 +44,11 @@ export default {
     @include text($H14, 800, $base-color);
     margin-bottom: 30px;
   }
-  &__content {
+  &__text-block {
     max-width: 526px;
+    &:not(:last-child) {
+    margin-right: 35px;
+  }
   }
 }
 </style>

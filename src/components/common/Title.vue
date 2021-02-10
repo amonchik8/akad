@@ -1,10 +1,13 @@
 <template>
-  <h2 class="title"><slot /></h2>
+  <h2 class="title">{{ title }}</h2>
 </template>
 
 <script>
 export default {
   name: "Title",
+  props: {
+    title: String
+  }
 };
 </script>
 

@@ -1,9 +1,6 @@
 <template>
   <section>
-    <Header>
-      <template #title> contact us </template>
-      <template #subtitle> home / contact </template>
-    </Header>
+    <Header title="contact us" subtitle="home / contact" />
     <TheContainer>
       <ContactMain></ContactMain>
     </TheContainer>

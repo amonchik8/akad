@@ -1,7 +1,7 @@
 <template>
   <section class="why-choose">
     <div class="why-choose__container">
-      <Title class="title-decoration">why choose us</Title>
+      <Title class="title-decoration" title="why choose"/>
       <p class="title__description why-choose__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.

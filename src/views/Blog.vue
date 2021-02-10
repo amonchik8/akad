@@ -1,9 +1,6 @@
 <template>
   <section>
-    <Header>
-      <template #title> blog posts </template>
-      <template #subtitle> home / blog </template>
-    </Header>
+    <Header title="blog posts" subtitle="home / blog" />
     <TheSubscribe></TheSubscribe>
     <TheFooter></TheFooter>
   </section>

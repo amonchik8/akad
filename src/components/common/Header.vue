@@ -3,8 +3,8 @@
     <div class="header__back">
       <div class="container header__container">
         <MenuPanel class="header__panel"></MenuPanel>
-        <Title class="header__title"><slot name="title" /></Title>
-        <Subtitle><slot name="subtitle" /></Subtitle>
+        <Title class="header__title" :title=title></Title>
+        <Subtitle>{{ subtitle }}</Subtitle>
       </div>
     </div>
   </section>
@@ -22,6 +22,10 @@ export default {
     Title,
     Subtitle,
   },
+  props: {
+    title: String,
+    subtitle: String,
+  }
 };
 </script>
 

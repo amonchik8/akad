@@ -1,6 +1,6 @@
 <template>
   <div class="we-do">
-    <Title class="we-do__title title-decoration title-decoration--icon"><slot /></Title>
+    <IconTitle class="title-decoration title-decoration--icon"><slot /></IconTitle>
     <h3 class="we-do__subtitle">{{ subtitle }}</h3>
     <Content class="we-do__content">{{ content }}</Content>
   </div>
@@ -8,13 +8,12 @@
 
 <script>
 import Content from "../Content.vue";
-import Title from "../Title.vue";
+import IconTitle from "./IconTitle.vue";
 
 export default {
-  components: { Content, Title },
+  components: { Content, IconTitle },
   name: "WeDo",
   props: {
-    title: String,
     subtitle: String,
     content: String,
   },

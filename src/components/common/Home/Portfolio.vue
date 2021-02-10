@@ -2,7 +2,7 @@
   <section class="portfolio">
     <a class="portfolio__anchor" name='portfolio'></a>
     <div class="portfolio__container">
-      <Title class="title-decoration">our portfolio</Title>
+      <Title class="title-decoration portfolio__title" title="our portfolio"/>
       <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -129,7 +129,7 @@ export default {
 <style lang="scss">
 .portfolio {
   &__container {
-    @include flex(center, center, column);
+    @include flex(center, stretch, column);
     padding: 75px 0 150px;
   }
   &__anchor {
@@ -137,6 +137,10 @@ export default {
   }
   &__description {
     max-width: 765px;
+  }
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 25px;
   }
 }
 .main {

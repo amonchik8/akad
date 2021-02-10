@@ -17,7 +17,7 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <form class="form" action="">
-            <input class="form__input" type="text" placeholder="your email" />
+            <Input />
             <Button class="form__button">send</Button>
           </form>
         </div>
@@ -28,10 +28,12 @@
 
 <script>
 import Button from "./common/Button.vue";
+import Input from "./common/Input.vue";
 export default {
   name: "TheSubscribe",
   components: {
     Button,
+    Input,
   },
 };
 </script>
@@ -80,17 +82,6 @@ export default {
 .form {
   @include flex(flex-start, stretch, row);
   max-width: 100%;
-  &__input {
-    @include text($H14, 400, $base-color);
-    width: 100%;
-    padding: 12px 20px;
-    border: 1px solid $input-color;
-    outline: none;
-    @include placeholder {
-      @include text($H11, 700, $input-color);
-      text-transform: uppercase;
-    }
-  }
   &__button {
     padding: 17px 48.05px;
   }

@@ -40,6 +40,7 @@
 <script>
 import Button from "./common/Button.vue";
 import Input from "./common/Input.vue";
+
 export default {
   name: "TheSubscribe",
   components: {

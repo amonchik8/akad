@@ -17,17 +17,14 @@
             alt="image"
           />
         </div>
-        <div class="history__text-block-wrapper">
-          <TextBlock
-            class="history__text-block"
-            title="HISTORY OF AGENCY"
-            content="Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+        <div class="history__info">
+          <Title class="history__title title-decoration" title="HISTORY OF AGENCY"/>
+          <Content>"Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
               consectetur, adipisci velit, sed quia non numquam eius modi
               tempora incidunt ut labore et dolore magnam aliquam quaerat
               voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
               ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-              modi tempora incidunt ut labore."
-          />
+              modi tempora incidunt ut labore."</Content>
           <Button class="history__button">read more</Button>
         </div>
       </div>
@@ -38,14 +35,16 @@
 <script>
 import MenuPanel from "../MenuPanel.vue";
 import Button from "../Button.vue";
-import TextBlock from "../TextBlock.vue";
+import Title from "../Title.vue";
+import Content from '../Content.vue';
 
 export default {
   name: "HomeHeader",
   components: {
     Button,
     MenuPanel,
-    TextBlock,
+    Title,
+    Content
   },
 };
 </script>
@@ -97,6 +96,9 @@ export default {
 }
 .history {
   @include flex(space-between, center, row);
+  &__title {
+    margin-right: auto;
+  }
   &__image-wrapper {
     width: 50%;
     padding-bottom: 35.2%;
@@ -115,12 +117,9 @@ export default {
     bottom: 0;
     object-fit: cover;
   }
-  &__text-block-wrapper {
+  &__info {
     @include flex(flex-end, flex-end, column);
     max-width: 450px;
-  }
-  &__text-block {
-    margin-bottom: 20px;
   }
 }
 </style>

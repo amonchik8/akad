@@ -1,13 +1,13 @@
 <template>
-  <div class="input">
-    <div class="input__label-wrapper">
-      <label class="input__label" v-if="!!label">{{ label }}</label>
-      <span v-if="hasError" class="input__error-message">{{
+  <div class="textarea">
+    <div class="textarea__label-wrapper">
+      <label class="textarea__label" v-if="!!label">{{ label }}</label>
+      <span v-if="hasError" class="textarea__error-message">{{
         errorMessage
       }}</span>
     </div>
-    <input
-      class="input__input"
+    <textarea
+      class="textarea__textarea"
       :class="{ _error: hasError, _valid: valid }"
       :placeholder="placeholder"
       :type="type"
@@ -16,13 +16,13 @@
       @input="(e) => $emit('input', e.target.value)"
       @blur="$emit('blur')"
       @focus="$emit('focus')"
-    />
+    ></textarea>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Input",
+  name: "Textarea",
   props: {
     label: String,
     type: String,
@@ -38,14 +38,17 @@ export default {
 </script>
 
 <style lang="scss">
-.input {
+.textarea {
     width: 100%;
-  &__input {
-    @include text($H14, 400, $base-color);
-    width: 100%;
+  &__textarea {
     padding: 16px 20px;
     border: 1px solid $input-color;
     outline: none;
+    resize: none;
+    height: 200px;
+    max-width: 555px;
+    width: 100%;
+    @include text($H14, 400, $base-color);
     @include placeholder {
       @include text($H11, 700, $input-color);
       text-transform: uppercase;
@@ -64,10 +67,10 @@ export default {
     color: $invalid-color;
   }
 }
-.input__input._valid {
+.textarea__textarea._valid {
   border-color: $valid-color;
 }
-.input__input._error {
+.textarea__textarea._error {
   border-color: $invalid-color;
 }
 </style>

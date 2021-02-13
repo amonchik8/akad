@@ -11,9 +11,9 @@
 
 <script>
 import ContactMain from "../components/common/Contact/ContactMain.vue";
-import TheContainer from "../components/TheContainer.vue";
+
 export default {
   name: "Contact",
-  components: { ContactMain, TheContainer },
+  components: { ContactMain },
 };
 </script>

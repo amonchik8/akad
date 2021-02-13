@@ -5,6 +5,7 @@ import TheContainer from "@/components/TheContainer.vue";
 import TheSubscribe from "@/components/TheSubscribe.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import Header from "@/components/common/Header.vue";
+import 'leaflet/dist/leaflet.css';
 
 Vue.component("TheContainer", TheContainer);
 Vue.component("TheSubscribe", TheSubscribe);

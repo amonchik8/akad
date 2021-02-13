@@ -4,7 +4,7 @@
       <div class="footer__main">
         <TheNavigation></TheNavigation>
         <div class="footer__author">
-          Created by akhouad 2016. All Rights Reserved
+          Created by jedi 2021. All Rights Reserved
         </div>
       </div>
       <Social></Social>

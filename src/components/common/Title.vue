@@ -16,13 +16,19 @@ export default {
   @include text($H30, 700, $base-color);
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  @include media {
+    margin-bottom: 25px;
+  }
   &__description {
     text-align: center;
     @include text($H14, 400, $base-color);
     font-family: $secondary-font;
     line-height: 1.7;
-    margin: 0 auto 100px;
+    margin: 0 auto 10px;
+    @include media {
+      margin: 0 auto 100px;
+    }
   }
 }
 .title-decoration {

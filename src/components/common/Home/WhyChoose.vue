@@ -1,7 +1,7 @@
 <template>
   <section class="why-choose">
     <div class="why-choose__container">
-      <Title class="title-decoration" title="why choose"/>
+      <Title class="title-decoration" title="why choose" />
       <p class="title__description why-choose__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -95,7 +95,10 @@ export default {
 .why-choose {
   &__container {
     @include flex(center, center, column);
-    padding: 75px 0;
+    @include media {
+      padding: 75px 0;
+    }
+    padding: 30px 0;
   }
   &__icon {
     @include text($H36, 400, $base-color);
@@ -106,14 +109,24 @@ export default {
   }
 }
 .why-choose-list {
-  @include flex(space-between, center, row, wrap);
+  @include flex(center, center, row, wrap);
+  margin-bottom: 20px;
+  @include media {
+    @include flex(space-between, center, row, wrap);
+    margin-bottom: 0;
+  }
   &--col {
-    margin-right: 135px;
+    @include media {
+      margin-right: 135px;
+    }
   }
   &__row {
-    @include flex(flex-start, center, row);
+    @include flex(space-between, center, row);
     &:not(:last-of-type) {
-      margin-bottom: 60px;
+      margin-bottom: 20px;
+      @include media {
+    margin-bottom: 60px;
+  }
     }
   }
   &__item-title {
@@ -122,18 +135,25 @@ export default {
     margin-bottom: 20px;
   }
   &__item-body {
-    @include text($H14, 400, #999);
+    @include text($H14, 400, $secondary-color);
     text-transform: uppercase;
     display: block;
     line-height: 2.14;
   }
 }
 .block {
-  @include flex(space-between, center, row);
+  @include media {
+    @include flex(space-between, center, row);
+  }
+  @include flex(center, center, column);
   &__image-wrapper {
-    width: 63%;
-    padding-bottom: 36.5%;
+    width: 52%;
+    padding-bottom: 49.5%;
     position: relative;
+    @include media {
+      width: 63%;
+      padding-bottom: 36.5%;
+    }
   }
   &__image {
     position: absolute;

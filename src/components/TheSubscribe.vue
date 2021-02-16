@@ -4,7 +4,7 @@
       <div class="subscribe__main">
         <div class="subscribe__title-wrapper">
           <h2 class="subscribe__title">
-            YOU THINK WE'RE COOL ? LET'S WORK TOGETHER
+            YOU THINK WE'RE COOL? LET'S WORK TOGETHER
           </h2>
           <button class="button subscribe__button">get in touch</button>
         </div>
@@ -101,21 +101,36 @@ export default {
     max-width: 1188px;
     width: 100%;
     margin: 0 auto;
-    padding: 50px 24px;
+    @include media {
+      padding: 50px 24px;
+    }
+    padding: 25px 12px;
   }
   background-color: $G90;
   &__main {
-    @include flex(space-between, flex-start, row);
+    @include media {
+      @include flex(space-between, flex-start, row);
+    }
+    @include flex(center, stretch, column);
   }
   &__title {
     @include text($H30, 700, $N0);
     line-height: 1.6;
     margin-bottom: 20px;
-    max-width: 490px;
+    text-align: center;
+    @include media {
+      max-width: 490px;
+      text-align: left;
+    }
   }
   &__button {
     color: $G90;
     background-color: $N0;
+    margin-bottom: 10px;
+
+    @include media {
+      margin-bottom: 0;
+    }
   }
   &__form {
     @include flex(flex-start, stretch, column);
@@ -125,19 +140,32 @@ export default {
   &__form-title {
     @include text($H24, 700, $base-color);
     line-height: 1.5;
-    margin-bottom: 15px;
-    max-width: 336px;
+    margin-bottom: 10px;
+    text-align: center;
+    @include media {
+      max-width: 336px;
+      text-align: left;
+      margin-bottom: 15px;
+    }
   }
   &__form-subtitle {
     @include text($H16, 400, $secondary-color);
     line-height: 1.5;
     font-family: $secondary-font;
-    margin-bottom: 25px;
-    max-width: 488px;
+    margin-bottom: 10px;
+    text-align: center;
+    @include media {
+      max-width: 488px;
+      text-align: left;
+      margin-bottom: 25px;
+    }
   }
 }
 .form {
-  @include flex(flex-start, flex-end, row);
+  @include media {
+    @include flex(flex-start, flex-end, row);
+  }
+  @include flex(flex-start, flex-end, column);
   max-width: 100%;
   &__button {
     padding: 17px 48.05px;

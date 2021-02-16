@@ -46,6 +46,10 @@ export default {
     padding: 16px 20px;
     border: 1px solid $input-color;
     outline: none;
+    margin-bottom: 10px;
+    @include media {
+      margin-bottom: 0;
+    }
     @include placeholder {
       @include text($H11, 700, $input-color);
       text-transform: uppercase;

@@ -18,13 +18,18 @@
           />
         </div>
         <div class="history__info">
-          <Title class="history__title title-decoration" title="HISTORY OF AGENCY"/>
-          <Content>"Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-              consectetur, adipisci velit, sed quia non numquam eius modi
-              tempora incidunt ut labore et dolore magnam aliquam quaerat
-              voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-              ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-              modi tempora incidunt ut labore."</Content>
+          <Title
+            class="history__title title-decoration"
+            title="HISTORY OF AGENCY"
+          />
+          <Content
+            >"Porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+            consectetur, adipisci velit, sed quia non numquam eius modi tempora
+            incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+            enim ad minima veniam, quis nostrum exercitationem ullam corporis
+            suscipit laboriosam, nisi ut aliquid ex ea commodi modi tempora
+            incidunt ut labore."</Content
+          >
           <Button class="history__button">read more</Button>
         </div>
       </div>
@@ -36,7 +41,7 @@
 import MenuPanel from "../MenuPanel.vue";
 import Button from "../Button.vue";
 import Title from "../Title.vue";
-import Content from '../Content.vue';
+import Content from "../Content.vue";
 
 export default {
   name: "HomeHeader",
@@ -44,7 +49,7 @@ export default {
     Button,
     MenuPanel,
     Title,
-    Content
+    Content,
   },
 };
 </script>
@@ -59,16 +64,23 @@ export default {
     max-width: 1188px;
     width: 100%;
     margin: 0 auto;
-    padding: 45px 24px 75px;
+    padding: 20px 12px 30px;
+    @include media {
+      padding: 45px 24px 75px;
+    }
   }
   &__panel {
-    margin-bottom: 210px;
+    margin-bottom: 100px;
+    @include media {
+      margin-bottom: 210px;
+    }
   }
   &__title {
     @include text($H48, 700, $base-color);
     border: 10px solid $base-color;
     text-transform: uppercase;
     max-width: max-content;
+    text-align: center;
     margin: 0 auto;
     padding: 12.5px 39.5px;
     margin-bottom: 30px;
@@ -90,19 +102,33 @@ export default {
     line-height: 1.5;
     margin: 0 auto;
     max-width: 540px;
-    margin-bottom: 125px;
+    margin-bottom: 25px;
     font-family: $secondary-font;
+    @include media {
+      margin-bottom: 125px;
+    }
   }
 }
 .history {
-  @include flex(space-between, center, row);
+  @include flex(center, center, column);
+  @include media {
+    @include flex(space-between, center, row);
+  }
   &__title {
-    margin-right: auto;
+    @include media {
+      margin-right: auto;
+    }
   }
   &__image-wrapper {
     width: 50%;
-    padding-bottom: 35.2%;
+    padding-bottom: 42.2%;
     position: relative;
+    margin-bottom: 10px;
+    @include media {
+      width: 50%;
+      padding-bottom: 35.2%;
+      margin-bottom: 0;
+    }
   }
   &__image {
     position: absolute;
@@ -118,8 +144,12 @@ export default {
     object-fit: cover;
   }
   &__info {
-    @include flex(flex-end, flex-end, column);
-    max-width: 450px;
+    @include flex(center, center, column);
+    max-width: 700px;
+    @include media {
+      @include flex(flex-end, flex-end, column);
+      max-width: 450px;
+    }
   }
 }
 </style>

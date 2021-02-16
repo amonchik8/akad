@@ -133,7 +133,10 @@ export default {
 .portfolio {
   &__container {
     @include flex(center, stretch, column);
-    padding: 75px 0 150px;
+    @include media {
+      padding: 75px 0 150px;
+    }
+    padding: 30px 0 50px;
   }
   &__anchor {
     display: flex;
@@ -143,7 +146,10 @@ export default {
   }
   &__title {
     margin: 0 auto;
+    margin-bottom: 10px;
+  @include media {
     margin-bottom: 25px;
+  }
   }
 }
 .main {

@@ -13,5 +13,9 @@ export default {
   @include text($H14, 400, $base-color);
   font-family: $secondary-font;
   line-height: 2.1;
+  text-align: center;
+  @include media {
+    text-align: left;
+  }
 }
 </style>

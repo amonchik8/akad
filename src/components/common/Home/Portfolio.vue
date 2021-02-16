@@ -1,8 +1,7 @@
 <template>
   <section class="portfolio">
-    <a class="portfolio__anchor" name='portfolio'></a>
-    <div class="portfolio__container">
-      <Title class="title-decoration portfolio__title" title="our portfolio"/>
+    <div id="portfolio" class="portfolio__container">
+      <Title class="title-decoration portfolio__title" title="our portfolio" />
       <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -23,7 +22,11 @@
           </ul>
         </div>
         <transition-group tag="div" class="main__grid" name="portfolio-grid">
-          <ul class="portfolio-grid portfolio-grid-item" key="portfolio-grid" :class="{ gridFiltered: filter != 'all' }">
+          <ul
+            class="portfolio-grid portfolio-grid-item"
+            key="portfolio-grid"
+            :class="{ gridFiltered: filter != 'all' }"
+          >
             <li
               class="portfolio-grid__item"
               v-for="image in filteredPortfolio"
@@ -232,9 +235,10 @@ export default {
   @include flex(center, center);
 }
 .portfolio-grid-item {
-  transition: all .5s;
+  transition: all 0.5s;
 }
-.portfolio-grid-enter, .portfolio-grid-leave-to {
+.portfolio-grid-enter,
+.portfolio-grid-leave-to {
   opacity: 0;
   transform: translateY(30px);
 }

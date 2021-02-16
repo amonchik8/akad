@@ -3,7 +3,7 @@
     <router-link class="nav__link" to="/">Home</router-link>
     <router-link class="nav__link" to="/about">About us</router-link>
     <router-link class="nav__link" to="/services">Services</router-link>
-    <a class="nav__link" href="#portfolio">portfolio</a>
+    <a class="nav__link" href="/#portfolio">portfolio</a>
     <router-link class="nav__link" to="/blog">Blog</router-link>
     <router-link class="nav__link" to="/contact">Contact us</router-link>
   </div>

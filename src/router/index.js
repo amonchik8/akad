@@ -26,7 +26,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Blog.vue"),
+      import(/* webpackChunkName: "blog" */ "../views/Blog.vue"),
   },
   {
     path: "/contact",
@@ -35,7 +35,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Contact.vue"),
+      import(/* webpackChunkName: "contact" */ "../views/Contact.vue"),
   },
   {
     path: "/services",
@@ -44,14 +44,34 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Services.vue"),
+      import(/* webpackChunkName: "services" */ "../views/Services.vue"),
+  },
+  {
+    path: "/portfolio",
+    name: "Portfolio",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "home" */ "../views/Home.vue"),
   },
 ];
+
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  scrollBehavior (to) {
+    if (to.hash) {
+      return window.scrollTo({ 
+        top: document.querySelector(to.hash).offsetTop, 
+        behavior: 'smooth' 
+      })
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 });
 
 export default router;

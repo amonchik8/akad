@@ -1,7 +1,7 @@
 <template>
   <section class="portfolio">
-    <div id="portfolio" class="portfolio__container">
-      <Title class="title-decoration portfolio__title" title="our portfolio" />
+    <div class="portfolio__container">
+      <Title id="portfolio" class="title-decoration portfolio__title" title="our portfolio" />
       <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.

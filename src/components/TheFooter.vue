@@ -38,6 +38,10 @@ export default {
   &__author {
     @include text($H14, 400, $author-color);
     text-transform: uppercase;
+    max-width: 180px;
+    @include media {
+      max-width: 100%;
+    }
   }
 }
 </style>

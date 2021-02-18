@@ -109,11 +109,12 @@ export default {
   }
 }
 .why-choose-list {
-  @include flex(center, center, row, wrap);
+  @include flex(center, stretch, column);
   margin-bottom: 20px;
   @include media {
     @include flex(space-between, center, row, wrap);
     margin-bottom: 0;
+    margin-right: 125px;
   }
   &--col {
     @include media {
@@ -125,8 +126,8 @@ export default {
     &:not(:last-of-type) {
       margin-bottom: 20px;
       @include media {
-    margin-bottom: 60px;
-  }
+        margin-bottom: 60px;
+      }
     }
   }
   &__item-title {
@@ -147,20 +148,21 @@ export default {
   }
   @include flex(center, center, column);
   &__image-wrapper {
-    width: 52%;
-    padding-bottom: 49.5%;
+    width: 100%;
+    max-width: 460px;
     position: relative;
     @include media {
-      width: 63%;
-      padding-bottom: 36.5%;
+      width: 100%;
+      padding-bottom: 44.3%;
+      margin-bottom: 0;
     }
   }
   &__image {
-    position: absolute;
     z-index: 2;
     width: 100%;
-    height: 100%;
-    max-height: 414px;
+    @include media {
+      position: absolute;
+    }
     top: 0;
     left: 0;
     right: 0;

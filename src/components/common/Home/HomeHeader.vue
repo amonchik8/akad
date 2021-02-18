@@ -3,6 +3,7 @@
     <div class="home-header__container">
       <MenuPanel class="home-header__panel" />
       <div class="home-header__title-wrapper">
+        <div class="home-header__decor">we`re</div>
         <h1 class="home-header__title">creative agency</h1>
         <p class="home-header__description">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -19,7 +20,7 @@
         </div>
         <div class="history__info">
           <Title
-            class="history__title title-decoration"
+            class="history__title title-decoration title-decoration--history"
             title="HISTORY OF AGENCY"
           />
           <Content
@@ -72,7 +73,7 @@ export default {
   &__panel {
     margin-bottom: 100px;
     @include media {
-      margin-bottom: 210px;
+      margin-bottom: 190px;
     }
   }
   &__title {
@@ -82,19 +83,21 @@ export default {
     max-width: max-content;
     text-align: center;
     margin: 0 auto;
-    padding: 12.5px 39.5px;
-    margin-bottom: 30px;
-    position: relative;
-    &:after {
-      padding: 6px 20px;
-      position: absolute;
-      content: "we’re";
-      @include text($H18, 700, $base-color);
-      line-height: 1;
-      background-color: $G90;
-      left: 42%;
-      top: -40px;
+    padding: 12.5px 0;
+    @include media(506px) {
+      padding: 12.5px 39.5px;
     }
+    margin-bottom: 30px;
+  }
+  &__decor {
+    @include flex(center, center, column);
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    @include text($H18, 700, $base-color);
+    line-height: 1;
+    background-color: $G90;
   }
   &__description {
     @include text($H16, 400, $base-color);
@@ -110,7 +113,7 @@ export default {
   }
 }
 .history {
-  @include flex(center, center, column);
+  @include flex(center, center, row, wrap);
   @include media {
     @include flex(space-between, center, row);
   }
@@ -120,23 +123,22 @@ export default {
     }
   }
   &__image-wrapper {
-    width: 50%;
-    padding-bottom: 42.2%;
+    width: 100%;
+    max-width: 450px;
     position: relative;
     margin-bottom: 10px;
     @include media {
-      width: 50%;
+      width: 40.3%;
       padding-bottom: 35.2%;
       margin-bottom: 0;
     }
   }
   &__image {
-    position: absolute;
     z-index: 2;
     width: 100%;
-    max-width: 458px;
-    height: 100%;
-    max-height: 400px;
+    @include media {
+      position: absolute;
+    }
     top: 0;
     left: 0;
     right: 0;

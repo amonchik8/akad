@@ -6,8 +6,8 @@
 export default {
   name: "Title",
   props: {
-    title: String
-  }
+    title: String,
+  },
 };
 </script>
 
@@ -49,6 +49,14 @@ export default {
       width: 50px;
       left: -10px;
       bottom: 14px;
+    }
+  }
+  &--history {
+    &:after {
+      display: none;
+      @include media(357px) {
+        display: block;
+      }
     }
   }
 }

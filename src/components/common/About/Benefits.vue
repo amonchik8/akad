@@ -82,7 +82,10 @@ export default {
 .benefits {
   &__container {
     @include flex(center, center, column);
-    padding: 150px 0 15px;
+    padding: 30px 0 15px;
+    @include media {
+      padding: 150px 0 15px;
+    }
   }
   &__description {
     max-width: 717px;

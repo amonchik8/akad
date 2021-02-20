@@ -61,8 +61,8 @@
 </template>
 
 <script>
-import Content from "../Content.vue";
-import Title from "../Title";
+import Content from "../common/Content.vue";
+import Title from "../common/Title";
 import WeDo from "./WeDo.vue";
 import WhatWeDoListItem from "./WhatWeDoListItem.vue";
 

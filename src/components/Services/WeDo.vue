@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Content from "../Content.vue";
+import Content from "../common/Content.vue";
 import IconTitle from "./IconTitle.vue";
 
 export default {

@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import TextBlock from "../TextBlock.vue";
+import TextBlock from "../common/TextBlock.vue";
 
 export default {
   name: "Main",

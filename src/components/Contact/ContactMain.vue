@@ -71,7 +71,7 @@
               email@website.com
             </li>
           </ul>
-          <Social class="contact__social"></Social>
+          <Social class="contact__social" />
         </div>
       </div>
       <div class="map">
@@ -82,11 +82,11 @@
 </template>
 
 <script>
-import Button from "../Button.vue";
-import Content from "../Content.vue";
-import Input from "../Input.vue";
-import Social from "../Social.vue";
-import Textarea from "../Textarea.vue";
+import Button from "../common/Button.vue";
+import Content from "../common/Content.vue";
+import Input from "../common/Input.vue";
+import Social from "../common/Social.vue";
+import Textarea from "../common/Textarea.vue";
 import Map from "./Map.vue";
 import { Icon } from 'leaflet';
 

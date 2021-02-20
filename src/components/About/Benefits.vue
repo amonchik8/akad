@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Title from "../Title.vue";
+import Title from "../common/Title.vue";
 import Benefit from "./Benefit.vue";
 
 export default {

@@ -29,7 +29,10 @@ export default {
     max-width: 1188px;
     width: 100%;
     margin: 0 auto;
-    padding: 50px 24px;
+    @include media {
+      padding: 50px 24px;
+    }
+    padding: 20px 12px;
   }
   &__main {
     @include flex(space-between, center, row);

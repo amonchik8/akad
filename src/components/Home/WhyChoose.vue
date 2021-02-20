@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import Title from "../Title";
+import Title from "../common/Title";
 
 export default {
   name: "WhyChoose",

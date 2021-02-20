@@ -1,7 +1,11 @@
 <template>
   <section class="portfolio">
     <div class="portfolio__container">
-      <Title id="portfolio" class="title-decoration portfolio__title" title="our portfolio" />
+      <Title
+        id="portfolio"
+        class="title-decoration portfolio__title"
+        title="our portfolio"
+      />
       <p class="title__description portfolio__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -21,24 +25,23 @@
             >
           </ul>
         </div>
-        <transition-group tag="div" class="main__grid" name="portfolio-grid">
-          <ul
-            class="portfolio-grid portfolio-grid-item"
-            key="portfolio-grid"
-            :class="{ gridFiltered: filter != 'all' }"
+        <transition-group
+          tag="ul"
+          :class="{ gridFiltered: filter != 'all' }"
+          class="main__grid portfolio-grid"
+          name="flip"
+        >
+          <li
+            class="portfolio-grid__item"
+            v-for="image in filteredPortfolio"
+            :key="image.id"
           >
-            <li
-              class="portfolio-grid__item"
-              v-for="image in filteredPortfolio"
-              :key="image.id"
-            >
-              <img
-                class="portfolio-grid__image"
-                :src="image.imageUrl"
-                :alt="image.category"
-              />
-            </li>
-          </ul>
+            <img
+              class="portfolio-grid__image"
+              :src="image.imageUrl"
+              :alt="image.category"
+            />
+          </li>
         </transition-group>
       </div>
     </div>
@@ -46,7 +49,7 @@
 </template>
 
 <script>
-import Title from "../Title";
+import Title from "../common/Title";
 import AppFilter from "./AppFilter";
 
 export default {
@@ -103,26 +106,16 @@ export default {
           category: "Advertising",
           imageUrl: require("@/assets/images/Home/imageGrid9.png"),
         },
-      ],
+      ].map((item, id) => ({ ...item, id: id + 1 })),
     };
   },
   computed: {
     filteredPortfolio() {
       return this.portfolio.filter(({ category }) => {
-        switch (this.filter) {
-          case "web-design":
-            return category === "Web-design";
-          case "graphic-design":
-            return category === "Graphic-design";
-          case "fashion":
-            return category === "Fashion";
-          case "logo-design":
-            return category === "Logo-design";
-          case "advertising":
-            return category === "Advertising";
-          default:
-            return true;
-        }
+        return (
+          this.filter === "all" ||
+          category.toUpperCase() === this.filter.toUpperCase()
+        );
       });
     },
   },
@@ -147,15 +140,21 @@ export default {
   &__title {
     margin: 0 auto;
     margin-bottom: 10px;
-  @include media {
-    margin-bottom: 25px;
-  }
+    @include media {
+      margin-bottom: 25px;
+    }
   }
 }
 .main {
-  @include flex(space-between, flex-start, row);
+  @include flex(space-between, center, column);
+  @include media(700px) {
+    @include flex(space-between, flex-start, row);
+  }
   &__menu {
-    margin-right: 110px;
+    margin-right: 0;
+    @include media {
+      margin-right: 110px;
+    }
     min-width: 190px;
   }
   &__grid {
@@ -166,12 +165,20 @@ export default {
 }
 .portfolio-list {
   @include flex(flex-start, flex-start, column);
+  margin-bottom: 20px;
+  @include media {
+    margin-bottom: 0;
+  }
   &__title {
-    margin-top: -13px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+    @include media {
+      margin-bottom: 40px;
+      line-height: 1.9;
+      margin-top: -13px;
+    }
     text-align: left;
     max-width: 167px;
-    line-height: 1.9;
+    line-height: 1.6;
   }
   &__item {
     cursor: pointer;
@@ -179,7 +186,10 @@ export default {
     text-transform: uppercase;
     margin-bottom: 0;
     &:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      @include media {
+        margin-bottom: 30px;
+      }
     }
     &:not(:first-child) {
       margin-left: 20px;
@@ -188,19 +198,48 @@ export default {
 }
 .portfolio-grid {
   display: grid;
-  grid-template-rows: repeat(9, 0.5fr);
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "item-1 item-2 item-3"
-    "item-1 item-2 item-3"
-    "item-4 item-5 item-3"
-    "item-4 item-5 item-3"
-    "item-4 item-5 item-6"
-    "item-7 item-5 item-6"
-    "item-7 item-8 item-9"
-    "item-7 item-8 item-9"
-    "item-7 item-8 item-10";
+    "item-1"
+    "item-2"
+    "item-3"
+    "item-4"
+    "item-5"
+    "item-6"
+    "item-7"
+    "item-8"
+    "item-9";
+    @include media(400px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "item-1 item-2"
+      "item-1 item-2"
+      "item-3 item-4"
+      "item-3 item-6"
+      "item-5 item-7"
+      "item-5 item-7"
+      "item-8 item-9"
+      "item-8 item-11"
+      "item-10 item-11";
+  }
+  @include media {
+    grid-template-rows: repeat(9, 0.5fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    grid-template-areas:
+      "item-1 item-2 item-3"
+      "item-1 item-2 item-3"
+      "item-4 item-5 item-3"
+      "item-4 item-5 item-3"
+      "item-4 item-5 item-6"
+      "item-7 item-5 item-6"
+      "item-7 item-8 item-9"
+      "item-7 item-8 item-9"
+      "item-7 item-8 item-10";
+  }
+  align-items: stretch;
+  
   &__item {
     @include flex;
     &:nth-child(1) {
@@ -239,8 +278,9 @@ export default {
 }
 .gridFiltered {
   @include flex(center, center);
+  flex-wrap: wrap;
 }
-.portfolio-grid-item {
+.portfolio-grid__item {
   transition: all 0.5s;
 }
 .portfolio-grid-enter,
@@ -249,6 +289,20 @@ export default {
   transform: translateY(30px);
 }
 .portfolio-grid-leave-active {
+  position: absolute;
+}
+.flip {
+  transition: all 0.2s;
+}
+.flip-enter,
+.flip-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.flip-move {
+  transition: transform 0.4s;
+}
+.flip-leave-active {
   position: absolute;
 }
 </style>

@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import Button from "../Button.vue";
-import Title from "../Title.vue";
+import Button from "../common/Button.vue";
+import Title from "../common/Title.vue";
 
 export default {
   name: "Team",

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Title from "../Title.vue";
+import Title from "../common/Title.vue";
 import Subscription from "./Subscription.vue";
 import WhatWeDoListItem from "./WhatWeDoListItem.vue";
 

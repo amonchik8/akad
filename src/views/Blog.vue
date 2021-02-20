@@ -1,8 +1,8 @@
 <template>
   <section>
     <Header title="blog posts" subtitle="home / blog" />
-    <TheSubscribe></TheSubscribe>
-    <TheFooter></TheFooter>
+    <TheSubscribe />
+    <TheFooter />
   </section>
 </template>
 

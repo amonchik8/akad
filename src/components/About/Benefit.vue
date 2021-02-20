@@ -7,15 +7,15 @@
           class="benefit__icon"
         ></ion-icon>
       </div>
-      <Title class="benefit__title"><slot name="title" /></Title>
+      <Title class="benefit__title animate__animated animate__backInLeft"><slot name="title" /></Title>
     </div>
     <Content class="benefit__content"><slot name="content" /></Content>
   </div>
 </template>
 
 <script>
-import Content from "../Content.vue";
-import Title from "../Title.vue";
+import Content from "../common/Content.vue";
+import Title from "../common/Title.vue";
 
 export default {
   components: { Title, Content },

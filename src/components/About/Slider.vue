@@ -3,8 +3,17 @@
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         <li class="glide__slide" v-for="user in testimonials" :key="user.name">
-          <div class="glide__image-wrapper">
-            <img class="glide__image" :src="user.avatar" alt="avatar" />
+          <div
+            class="glide__image-wrapper animate__animated"
+            @mouseover="isHovering = true"
+            @mouseout="isHovering = false"
+            :class="{ animate__tada: isHovering }"
+          >
+            <img
+              class="glide__image animate__animated animate__tada"
+              :src="user.avatar"
+              alt="avatar"
+            />
           </div>
           <Content class="glide__slide-content">
             {{ user.testimonial }}</Content
@@ -24,13 +33,14 @@
 
 <script>
 import Glide from "@glidejs/glide";
-import Content from "../Content.vue";
+import Content from "../common/Content.vue";
 
 export default {
   components: { Content },
   name: "Slider",
   data() {
     return {
+      isHovering: false,
       testimonials: [
         {
           name: "Stormtrooper",

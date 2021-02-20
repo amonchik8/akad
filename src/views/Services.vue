@@ -2,17 +2,17 @@
   <section>
     <Header title="our services" subtitle="home / services" />
     <TheContainer>
-      <WhatWeDo></WhatWeDo>
-      <Plans></Plans>
+      <WhatWeDo />
+      <Plans />
     </TheContainer>
-    <TheSubscribe></TheSubscribe>
-    <TheFooter></TheFooter>
+    <TheSubscribe />
+    <TheFooter />
   </section>
 </template>
 
 <script>
-import Plans from '../components/common/Services/Plans.vue';
-import WhatWeDo from "../components/common/Services/WhatWeDo.vue";
+import Plans from '../components/Services/Plans.vue';
+import WhatWeDo from "../components/Services/WhatWeDo.vue";
 
 export default {
   name: "Services",

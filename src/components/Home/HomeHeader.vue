@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import MenuPanel from "../MenuPanel.vue";
-import Button from "../Button.vue";
-import Title from "../Title.vue";
-import Content from "../Content.vue";
+import MenuPanel from "../common/MenuPanel.vue";
+import Button from "../common/Button.vue";
+import Title from "../common/Title.vue";
+import Content from "../common/Content.vue";
 
 export default {
   name: "HomeHeader",
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss">
 .home-header {
-  background-image: url("../../../assets/images/Home/bgHome.png");
+  background-image: url("../../assets/images/Home/bgHome.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

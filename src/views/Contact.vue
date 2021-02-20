@@ -2,15 +2,15 @@
   <section>
     <Header title="contact us" subtitle="home / contact" />
     <TheContainer>
-      <ContactMain></ContactMain>
+      <ContactMain />
     </TheContainer>
-    <TheSubscribe></TheSubscribe>
-    <TheFooter></TheFooter>
+    <TheSubscribe />
+    <TheFooter />
   </section>
 </template>
 
 <script>
-import ContactMain from "../components/common/Contact/ContactMain.vue";
+import ContactMain from "../components/Contact/ContactMain.vue";
 
 export default {
   name: "Contact",

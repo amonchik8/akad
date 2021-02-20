@@ -1,19 +1,19 @@
 <template>
   <section>
-    <HomeHeader></HomeHeader>
+    <HomeHeader />
     <TheContainer>
-      <WhyChoose></WhyChoose>
-      <Portfolio></Portfolio>
+      <WhyChoose />
+      <Portfolio />
     </TheContainer>
-    <TheSubscribe></TheSubscribe>
-    <TheFooter></TheFooter>
+    <TheSubscribe />
+    <TheFooter />
   </section>
 </template>
 
 <script>
-import HomeHeader from "../components/common/Home/HomeHeader.vue";
-import WhyChoose from "../components/common/Home/WhyChoose.vue";
-import Portfolio from "../components/common/Home/Portfolio.vue";
+import HomeHeader from "../components/Home/HomeHeader.vue";
+import WhyChoose from "../components/Home/WhyChoose.vue";
+import Portfolio from "../components/Home/Portfolio.vue";
 
 export default {
   components: {

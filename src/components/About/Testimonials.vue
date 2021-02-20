@@ -2,7 +2,7 @@
   <section class="testimonials">
     <div class="testimonials__container">
       <div class="testimonials__main">
-       <Slider></Slider>
+       <Slider />
         <div class="testimonials-grid">
           <div
             class="testimonials-grid__image-wrapper"

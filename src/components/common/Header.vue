@@ -39,10 +39,16 @@ export default {
     background: rgba(255, 255, 255, 0.5);
   }
   &__container {
-    padding: 40px 24px 165px;
+    padding: 20px 12px 90px;
+    @include media {
+      padding: 40px 24px 165px;
+    }
   }
   &__panel {
-    margin-bottom: 210px;
+    margin-bottom: 50px;
+    @include media {
+      margin-bottom: 210px;
+    }
   }
   &__title {
     @include text($H36, 700, $base-color);

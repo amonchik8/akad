@@ -46,7 +46,6 @@ export default {
     outline: none;
     resize: none;
     height: 200px;
-    max-width: 555px;
     width: 100%;
     @include text($H14, 400, $base-color);
     @include placeholder {

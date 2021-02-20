@@ -53,13 +53,16 @@ export default {
 .plans {
   &__container {
     @include flex(center, center, column);
-    padding: 75px 0 150px;
+    padding-bottom: 20px;
+    @include media {
+      padding: 75px 0 150px;
+    }
   }
   &__description {
     max-width: 719px;
   }
   &__main {
-    @include flex(space-between, center, row);
+    @include flex(center, center, row, wrap);
     width: 100%;
   }
 }

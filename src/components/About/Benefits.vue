@@ -1,7 +1,7 @@
 <template>
   <section class="benefits">
     <div class="benefits__container">
-      <Title class="title-decoration" title="some benefits"/>
+      <Title class="title-decoration" title="some benefits" />
       <p class="title__description benefits__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -9,14 +9,10 @@
       <div class="benefits__main">
         <div v-for="benefit in benefits" :key="benefit.title">
           <Benefit
-          :name="benefit.icon">
-            <template #title>
-              {{ benefit.title }}
-            </template>
-            <template #content>
-              {{ benefit.content }}
-            </template>
-          </Benefit>
+            :name="benefit.icon"
+            :title="benefit.title"
+            :content="benefit.content"
+          />
         </div>
       </div>
     </div>
@@ -82,7 +78,7 @@ export default {
 .benefits {
   &__container {
     @include flex(center, center, column);
-    padding: 30px 0 15px;
+    padding: 10px 0 15px;
     @include media {
       padding: 150px 0 15px;
     }

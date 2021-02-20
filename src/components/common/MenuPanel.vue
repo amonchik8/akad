@@ -1,6 +1,6 @@
 <template>
   <nav class="navigation">
-    <a class="logo" href="http://">akad.</a>
+    <a class="logo" href="https://akad.vercel.app/">akad.</a>
     <img
       class="navigation__image"
       src="@/assets/images/Home/menuNavigation.png"

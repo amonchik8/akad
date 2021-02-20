@@ -24,20 +24,19 @@ export default {
 
 <style lang="scss">
 .subscription {
-  @include flex(flex-start, flex-start, column);
+  @include flex(center, center, column);
   border: 4px solid $N0;
   border-top: 4px solid $G90;
-  cursor: pointer;
   transition: all 0.3s ease;
   @include hover {
     border: 4px solid $G90;
-    box-shadow: 10px 10px 10px $G90;
+    box-shadow: 5px 5px 5px #acdacb;
     &::after {
       transition: all 0.3s ease;
       opacity: 0;
     }
   }
-  padding: 30px 30px 40px;
+  padding: 5px 5px 10px;
   max-width: 360px;
   width: 100%;
   position: relative;
@@ -51,17 +50,33 @@ export default {
     right: -3px;
     opacity: 1;
   }
+  @include media {
+    @include flex(flex-start, flex-start, column);
+    cursor: pointer;
+    padding: 30px 30px 40px;
+  }
+  @include media(1145px) {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
   &__price {
     @include text($H14, 700, $N0);
     text-transform: uppercase;
     background-color: $G90;
     padding: 8px 25.2px;
     line-height: 1;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
+    @include media {
+      margin-bottom: 50px;
+    }
   }
   &__list {
     @include flex(flex-start, flex-start, column);
-    margin-bottom: 50px;
+    margin-bottom: 15px;
+    @include media {
+      margin-bottom: 50px;
+    }
   }
   &__button {
     max-width: 135px;

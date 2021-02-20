@@ -40,19 +40,19 @@
       </div>
     </div>
     <div class="what-we-do__we-do">
-      <WeDo
+      <WeDo class="what-we-do__we-do-item"
         subtitle="KEEP PULSE GOING"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
       ><ion-icon name="pulse-outline"></ion-icon></WeDo>
-      <WeDo
+      <WeDo class="what-we-do__we-do-item"
         subtitle="PASS THE LIMITS"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
       ><ion-icon name="infinite-outline"></ion-icon></WeDo>
-      <WeDo
+      <WeDo class="what-we-do__we-do-item"
         subtitle="GREAT IDEAS"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
       ><ion-icon name="bulb-outline"></ion-icon></WeDo>
-      <WeDo
+      <WeDo class="what-we-do__we-do-item"
         subtitle="AWESOME SUPPORT"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
       ><ion-icon name="options-outline"></ion-icon></WeDo>
@@ -81,36 +81,71 @@ export default {
 .what-we-do {
   &__container {
     @include flex(center, center, column);
-    padding: 75px 0;
+    padding: 25px 0;
+    @include media {
+      padding: 75px 0;
+    }
   }
   &__description {
     max-width: 717px
   }
   &__main {
-    @include flex(space-between, flex-start, row);
+    @include flex(space-between, center, column);
     width: 100%;
+    @include media {
+      @include flex(space-between, flex-start, row);
+    }
   }
   &__content-wrapper {
-    @include flex(flex-start, flex-start, column);
+    @include flex(center, flex-start, column);
     max-width: 533px;
-    margin-right: 35px;
+    margin-right: 0;
+    @include media {
+      margin-right: 35px;
+      @include flex(flex-start, flex-start, column);
+    }
   }
   &__content {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    @include media {
+      margin-bottom: 50px;
+    }
   }
   &__list-wrapper {
-    @include flex(center, center, row);
+    @include flex(space-between, center, column);
+    width: 100%;
+    margin-bottom: 20px;
+    @include media(430px) {
+      @include flex(space-between, center, row);
+      
+    }
+    @include media {
+      @include flex(flex-start, center, row);
+      margin-bottom: 0;
+    }
   }
   &__list {
-    @include flex(flex-start, flex-start, column);
+    @include flex(flex-start, center, column);
+    @include media(430px) {
+      @include flex(flex-start, flex-start, column);
+    }
     &:not(:last-child) {
-      margin-right: 120px;
+      margin-right: 0;
+      @include media(430px) {
+      margin-bottom: 0;
+    }
+      margin-bottom: 20px;
+      @include media {
+        margin-right: 120px;
+      }
     }
   }
   &__banner {
     position: relative;
-    width: 48.7%;
-    padding-bottom: 32%;
+    width: 100%;
+    max-width: 550px;
+    padding-bottom: 38.7%;
+    margin-bottom: 20px;
   }
   &__image {
     position: absolute;
@@ -120,12 +155,15 @@ export default {
     bottom: 0;
     object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   &__we-do {
-    @include flex(space-between, center, row);
+    @include flex(center, center, row, wrap);
     width: 100%;
-    padding: 150px 0 0;
+    @include media {
+      @include flex(space-between, center, row, wrap);
+      padding: 150px 0 0;
+    }
   }
 }
 </style>

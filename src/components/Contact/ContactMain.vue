@@ -88,13 +88,13 @@ import Input from "../common/Input.vue";
 import Social from "../common/Social.vue";
 import Textarea from "../common/Textarea.vue";
 import Map from "./Map.vue";
-import { Icon } from 'leaflet';
+import { Icon } from "leaflet";
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+  iconUrl: require("leaflet/dist/images/marker-icon.png"),
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
 export default {
@@ -179,27 +179,46 @@ export default {
 <style lang="scss">
 .contact {
   &__container {
-    @include flex(space-between, center, row);
-    padding: 150px 0;
+    @include flex(space-between, center, column);
+    padding: 20px 0;
+    @include media {
+      @include flex(space-between, center, row);
+      padding: 150px 0;
+    }
   }
   &__main {
-    max-width: 560px;
-    margin-right: 30px;
+    @include media {
+      max-width: 560px;
+      margin-right: 30px;
+    }
   }
   &__title {
     @include text($H18, 700, $base-color);
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    @include media {
+      margin-bottom: 20px;
+    }
   }
   &__social {
     @include flex(flex-start);
+    margin-bottom: 20px;
+    @include media {
+      margin-bottom: 0;
+    }
   }
   &__content {
     color: $secondary-color;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    @include media {
+      margin-bottom: 20px;
+    }
   }
   &__list {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    @include media {
+      margin-bottom: 30px;
+    }
   }
   &__list-item {
     @include text($H14, 400, $secondary-color);
@@ -210,32 +229,54 @@ export default {
       font-weight: 700;
     }
   }
+  &__info {
+    @include media {
+      @include flex(flex-start, flex-start, column);
+    }
+  }
 }
 .contact-form {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   @include flex(center, flex-start, column);
-  max-width: 555px;
   width: 100%;
+  @include media {
+    max-width: 555px;
+    margin-bottom: 100px;
+  }
   &__input-wrapper {
-    @include flex(center, center, row);
+    @include flex(center, center, column);
     width: 100%;
-    margin-bottom: 10px;
+    @include media {
+      @include flex(center, center, row);
+      margin-bottom: 10px;
+    }
   }
   &__name-input {
-    margin-right: 30px;
+    margin-right: 0;
+    @include media {
+      margin-right: 30px;
+    }
   }
   &__input {
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    @include media {
+      margin-bottom: 10px;
+    }
   }
   &__textarea {
-    margin-bottom: 28px;
+    margin-bottom: 10px;
+    @include media {
+      margin-bottom: 28px;
+    }
   }
   &__button {
     padding: 17px 63.05px;
   }
 }
 .map {
-  max-width: 555px;
   width: 100%;
+  @include media {
+    max-width: 555px;
+  }
 }
 </style>

@@ -81,7 +81,10 @@ export default {
 .team {
   &__container {
     @include flex(center, center, column);
-    padding-top: 150px;
+    padding-top: 55px;
+    @include media {
+      padding-top: 150px;
+    }
   }
   &__title {
     position: relative;
@@ -104,8 +107,12 @@ export default {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-  margin-bottom: 30px;
+  grid-gap: 15px;
+  margin-bottom: 15px;
+  @include media {
+    grid-gap: 30px;
+    margin-bottom: 30px;
+  }
   grid-template-areas:
     "image-1 image-2 image-3 image-4"
     "image-5 image-6 image-7 image-8";
@@ -141,14 +148,22 @@ export default {
   }
 }
 .panel {
-  @include flex(space-between, center, row);
-  padding: 50px 30px;
+  @include flex(space-between, center, column);
+  padding: 25px 15px;
+  @include media {
+    @include flex(space-between, center, row);
+    padding: 50px 30px;
+  }
   width: 100%;
   background-color: rgba(96, 96, 110, 0.1);
   &__description {
-      @include text($H18, 400, $base-color);
-      font-family: $secondary-font;
-      font-style: italic;
+    @include text($H18, 400, $base-color);
+    font-family: $secondary-font;
+    font-style: italic;
+    margin-bottom: 10px;
+    @include media {
+    margin-bottom: 0;
+  }
   }
 }
 </style>

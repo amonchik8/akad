@@ -3,24 +3,25 @@
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         <li class="glide__slide" v-for="user in testimonials" :key="user.name">
-          <div
-            class="glide__image-wrapper animate__animated"
-            @mouseover="isHovering = true"
-            @mouseout="isHovering = false"
-            :class="{ animate__tada: isHovering }"
-          >
-            <img
-              class="glide__image animate__animated animate__tada"
-              :src="user.avatar"
-              alt="avatar"
-            />
-          </div>
-          <Content class="glide__slide-content">
-            {{ user.testimonial }}</Content
-          >
-          <div class="glide__slide-name">{{ user.name }}</div>
+            <div
+              class="glide__image-wrapper animate__animated"
+              @mouseover="isHovering = true"
+              @mouseout="isHovering = false"
+              :class="{ animate__tada: isHovering }"
+            >
+              <img
+                class="glide__image animate__animated animate__tada"
+                :src="user.avatar"
+                alt="avatar"
+              />
+            </div>
+            <Content class="glide__slide-content">
+              {{ user.testimonial }}</Content
+            >
+            <div class="glide__slide-name">{{ user.name }}</div>
         </li>
       </ul>
+
       <div class="glide__bullets" data-glide-el="controls[nav]">
         <button class="glide__bullet" data-glide-dir="=0"></button>
         <button class="glide__bullet" data-glide-dir="=1"></button>
@@ -70,6 +71,7 @@ export default {
       type: "carousel",
       startAt: 0,
       gap: 30,
+      autoplay: 2500,
     }).mount();
   },
 };
@@ -80,9 +82,9 @@ export default {
   box-sizing: inherit;
 }
 .glide {
-  margin-bottom: 40px;
   position: relative;
   max-width: 512px;
+  width: 100%;
   box-sizing: border-box;
   &__track {
     overflow: hidden;

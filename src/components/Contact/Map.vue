@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 876px">
+  <div class="map">
     <l-map
       :zoom="zoom"
       :center="center"
@@ -60,3 +60,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.map {
+  height: 476px;
+  @include media {
+    height: 876px;
+  }
+}
+</style>

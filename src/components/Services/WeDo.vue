@@ -29,6 +29,7 @@ export default {
     }
     &__subtitle {
         @include text($H18, 700, $base-color);
+        text-align: center;
         margin-bottom: 10px;
     }
     &__content {

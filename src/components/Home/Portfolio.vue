@@ -75,7 +75,7 @@ export default {
           imageUrl: require("@/assets/images/Home/imageGrid1.png"),
         },
         {
-          category: "Graphic-design",
+          category: "Advertising",
           imageUrl: require("@/assets/images/Home/imageGrid2.png"),
         },
         {
@@ -99,7 +99,7 @@ export default {
           imageUrl: require("@/assets/images/Home/imageGrid7.png"),
         },
         {
-          category: "Advertising",
+          category: "Graphic-design",
           imageUrl: require("@/assets/images/Home/imageGrid8.png"),
         },
         {
@@ -170,15 +170,15 @@ export default {
     margin-bottom: 0;
   }
   &__title {
+    text-align: left;
+    max-width: 167px;
+    line-height: 1.6;
     margin-bottom: 0;
     @include media {
       margin-bottom: 40px;
       line-height: 1.9;
       margin-top: -13px;
     }
-    text-align: left;
-    max-width: 167px;
-    line-height: 1.6;
   }
   &__item {
     cursor: pointer;
@@ -239,7 +239,6 @@ export default {
       "item-7 item-8 item-10";
   }
   align-items: stretch;
-  
   &__item {
     @include flex;
     &:nth-child(1) {

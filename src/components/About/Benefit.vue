@@ -1,5 +1,5 @@
 <template>
-  <div class="benefit">
+  <div class="benefit box" v-scroll="handleScroll">
     <div class="benefit__title">
       <div class="benefit__icon-wrapper">
         <ion-icon :name="name" class="benefit__icon"></ion-icon>
@@ -22,6 +22,14 @@ export default {
     title: String,
     content: String,
   },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 500) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1099;
+    },
+  },
 };
 </script>
 
@@ -31,6 +39,7 @@ export default {
   padding: 0 12px;
   margin-bottom: 10px;
   max-width: 362px;
+  opacity: 0;
   @include media {
     @include flex(center, flex-start, column);
     margin-bottom: 65px;

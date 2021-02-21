@@ -5,7 +5,7 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
     </p>
-    <div class="what-we-do__main">
+    <div class="what-we-do__main box" v-scroll="handleScroll">
       <div class="what-we-do__content-wrapper">
         <Content class="what-we-do__content"
           >Erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
@@ -14,7 +14,7 @@
           velit esse molestie consequat, vel illum dolore eu feugiat nulla
           facilisis at vero eros et accumsan.</Content
         >
-        <div class="what-we-do__list-wrapper">
+        <div class="what-we-do__list-wrapper box" v-scroll="handleScroll">
           <div class="what-we-do__list">
             <what-we-do-list-item value="Stunning on all screens" />
             <what-we-do-list-item value="Easy to customize" />
@@ -40,22 +40,30 @@
       </div>
     </div>
     <div class="what-we-do__we-do">
-      <WeDo class="what-we-do__we-do-item"
+      <WeDo
+        class="what-we-do__we-do-item"
         subtitle="KEEP PULSE GOING"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
-      ><ion-icon name="pulse-outline"></ion-icon></WeDo>
-      <WeDo class="what-we-do__we-do-item"
+        ><ion-icon name="pulse-outline"></ion-icon
+      ></WeDo>
+      <WeDo
+        class="what-we-do__we-do-item"
         subtitle="PASS THE LIMITS"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
-      ><ion-icon name="infinite-outline"></ion-icon></WeDo>
-      <WeDo class="what-we-do__we-do-item"
+        ><ion-icon name="infinite-outline"></ion-icon
+      ></WeDo>
+      <WeDo
+        class="what-we-do__we-do-item"
         subtitle="GREAT IDEAS"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
-      ><ion-icon name="bulb-outline"></ion-icon></WeDo>
-      <WeDo class="what-we-do__we-do-item"
+        ><ion-icon name="bulb-outline"></ion-icon
+      ></WeDo>
+      <WeDo
+        class="what-we-do__we-do-item"
         subtitle="AWESOME SUPPORT"
         content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ."
-      ><ion-icon name="options-outline"></ion-icon></WeDo>
+        ><ion-icon name="options-outline"></ion-icon
+      ></WeDo>
     </div>
   </section>
 </template>
@@ -74,6 +82,14 @@ export default {
     WhatWeDoListItem,
     WeDo,
   },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 0) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1399;
+    },
+  },
 };
 </script>
 
@@ -87,13 +103,16 @@ export default {
     }
   }
   &__description {
-    max-width: 717px
+    max-width: 717px;
   }
   &__main {
+    position: relative;
     @include flex(space-between, center, column);
     width: 100%;
+    opacity: 0;
     @include media {
       @include flex(space-between, flex-start, row);
+      opacity: 0;
     }
   }
   &__content-wrapper {
@@ -117,7 +136,6 @@ export default {
     margin-bottom: 20px;
     @include media(430px) {
       @include flex(space-between, center, row);
-      
     }
     @include media {
       @include flex(flex-start, center, row);
@@ -132,8 +150,8 @@ export default {
     &:not(:last-child) {
       margin-right: 0;
       @include media(430px) {
-      margin-bottom: 0;
-    }
+        margin-bottom: 0;
+      }
       margin-bottom: 20px;
       @include media {
         margin-right: 120px;

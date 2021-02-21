@@ -54,7 +54,7 @@
             >Send</Button
           >
         </form>
-        <div class="contact__info">
+        <div class="contact__info box" v-scroll="handleScroll">
           <h3 class="contact__title">contact info</h3>
           <Content class="contact__content"
             >Lorem ipsum dolor sit amet, conse adipisicing elit. Libero incidunt
@@ -167,6 +167,12 @@ export default {
     onSubmit() {
       alert("Send");
     },
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 450) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1399;
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -232,6 +238,7 @@ export default {
   &__info {
     @include media {
       @include flex(flex-start, flex-start, column);
+      opacity: 0;
     }
   }
 }

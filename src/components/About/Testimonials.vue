@@ -1,7 +1,7 @@
 <template>
   <section class="testimonials">
     <div class="testimonials__container">
-      <div class="testimonials__main">
+      <div class="testimonials__main box" v-scroll="handleScroll">
           <Slider class="testimonials__slider" />
         <div class="testimonials-grid">
           <div
@@ -56,6 +56,14 @@ export default {
       ],
     };
   },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 2100) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 2399;
+    },
+  },
 };
 </script>
 
@@ -69,6 +77,7 @@ export default {
     }
   }
   &__main {
+    opacity: 0;
     width: 100%;
     @include flex(space-between, center, column);
     @include media {

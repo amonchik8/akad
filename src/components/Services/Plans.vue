@@ -1,5 +1,5 @@
 <template>
-  <section class="plans__container">
+  <section v-scroll="handleScroll" class="plans__container box">
     <Title class="title-decoration" title="pricing plans" />
     <p class="title__description plans__description">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -46,12 +46,21 @@ export default {
     Subscription,
     WhatWeDoListItem,
   },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 1099) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1799;
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .plans {
   &__container {
+    opacity: 0;
     @include flex(center, center, column);
     padding-bottom: 20px;
     @include media {

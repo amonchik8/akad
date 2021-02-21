@@ -1,12 +1,12 @@
 <template>
   <section class="team">
     <div class="team__container">
-      <Title class="team__title" title="the dream team" />
-      <p class="title__description team__description">
+      <Title class="team__title box" title="the dream team" v-scroll="handleScroll" />
+      <p class="title__description team__description box" v-scroll="handleScroll">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <div class="team-grid">
+      <div class="team-grid box" v-scroll="handleScroll">
         <img
           class="team-grid__image"
           v-for="person in team"
@@ -74,6 +74,14 @@ export default {
       ],
     };
   },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 950) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1599;
+    },
+  },
 };
 </script>
 
@@ -87,6 +95,7 @@ export default {
     }
   }
   &__title {
+    opacity: 0;
     position: relative;
     &:after {
       position: absolute;
@@ -100,10 +109,12 @@ export default {
     }
   }
   &__description {
+    opacity: 0;
     max-width: 717px;
   }
 }
 .team-grid {
+  opacity: 0;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);

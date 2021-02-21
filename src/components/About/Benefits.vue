@@ -1,8 +1,8 @@
 <template>
   <section class="benefits">
     <div class="benefits__container">
-      <Title class="title-decoration" title="some benefits" />
-      <p class="title__description benefits__description">
+      <Title class="title-decoration benefits__title box" title="some benefits" v-scroll="handleScroll" />
+      <p class="title__description benefits__description box" v-scroll="handleScroll">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -28,6 +28,14 @@ export default {
   components: {
     Title,
     Benefit,
+  },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 300) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1099;
+    },
   },
   data() {
     return {
@@ -83,8 +91,12 @@ export default {
       padding: 150px 0 15px;
     }
   }
+  &__title {
+    opacity: 0;
+  }
   &__description {
     max-width: 717px;
+    opacity: 0;
   }
   &__main {
     @include flex(center, center, row, wrap);

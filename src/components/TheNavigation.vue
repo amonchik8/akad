@@ -27,17 +27,15 @@
       </div>
     </div>
     <div class="mob-nav">
-      <img
-        class="navigation__image"
-        src="@/assets/images/Home/menuNavigation.png"
-        alt="menu"
-      />
+      <Burger />
     </div>
   </div>
 </template>
 
 <script>
+import Burger from './common/Burger.vue';
 export default {
+  components: { Burger },
   name: "TheNavigation",
 };
 </script>

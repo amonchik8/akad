@@ -1,9 +1,11 @@
 <template>
-  <div class="we-do">
-    <IconTitle class="title-decoration title-decoration--icon"><slot /></IconTitle>
-    <h3 class="we-do__subtitle">{{ subtitle }}</h3>
-    <Content class="we-do__content">{{ content }}</Content>
-  </div>
+    <div v-scroll="handleScroll" class="we-do box">
+      <IconTitle class="title-decoration title-decoration--icon"
+        ><slot
+      /></IconTitle>
+      <h3 class="we-do__subtitle">{{ subtitle }}</h3>
+      <Content class="we-do__content">{{ content }}</Content>
+    </div>
 </template>
 
 <script>
@@ -17,24 +19,33 @@ export default {
     subtitle: String,
     content: String,
   },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 599) {
+        el.setAttribute("style", "opacity: 1;");
+      }
+      return window.scrollY > 1199;
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .we-do {
-    @include flex(center, center, column);
-    &__title {
-        @include text($H48, 400, $base-color);
-        margin-bottom: 10px;
-    }
-    &__subtitle {
-        @include text($H18, 700, $base-color);
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    &__content {
-        text-align: center;
-        max-width: 225px;
-    }
+  opacity: 0;
+  @include flex(center, center, column);
+  &__title {
+    @include text($H48, 400, $base-color);
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    @include text($H18, 700, $base-color);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__content {
+    text-align: center;
+    max-width: 225px;
+  }
 }
 </style>

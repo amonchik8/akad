@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="nav">
       <div class="nav__item">
         <div class="nav__decoration"></div>
@@ -26,17 +25,13 @@
         <router-link class="nav__link" to="/contact">Contact us</router-link>
       </div>
     </div>
-    <div class="mob-nav">
-      <Burger />
-    </div>
-  </div>
 </template>
 
 <script>
-import Burger from './common/Burger.vue';
+// import Burger from './common/Burger.vue';
 export default {
-  components: { Burger },
-  name: "TheNavigation",
+  // components: { Burger },
+  name: "Navigation",
 };
 </script>
 

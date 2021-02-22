@@ -2,7 +2,8 @@
   <section class="footer">
     <div class="footer__container">
       <div class="footer__main">
-        <TheNavigation></TheNavigation>
+        <Navigation class="footer__navigation" />
+        <Burger class="footer__burger" />
         <div class="footer__author">
           Created by jedi 2021. All Rights Reserved
         </div>
@@ -13,11 +14,12 @@
 </template>
 
 <script>
-import TheNavigation from "./TheNavigation.vue";
+import Burger from './common/Burger/Burger.vue';
+import Navigation from "./common/Navigation.vue";
 import Social from "./common/Social.vue";
 
 export default {
-  components: { Social, TheNavigation },
+  components: { Social, Navigation, Burger },
   name: "TheFooter",
 };
 </script>
@@ -43,7 +45,20 @@ export default {
     text-transform: uppercase;
     max-width: 180px;
     @include media {
+      border-top: 5px solid transparent;
       max-width: 100%;
+    }
+  }
+  &__navigation {
+    display: none;
+    @include media {
+      display: flex;
+    }
+  }
+  &__burger {
+    border-top: 5px solid transparent;
+    @include media {
+      display: none;
     }
   }
 }

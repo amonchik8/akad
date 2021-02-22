@@ -1,7 +1,7 @@
 <template>
   <section class="blog">
     <div class="blog__container">
-      <Title class="blog__title" title="Coming soon..." />
+      <Title class="blog__title" title="Will be on the next week..." />
       <div class="loadingio-spinner-bean-eater-laf79t3nl4">
         <div class="ldio-nanki2cech">
           <div>

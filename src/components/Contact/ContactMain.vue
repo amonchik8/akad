@@ -168,10 +168,10 @@ export default {
       alert("Send");
     },
     handleScroll: function (evt, el) {
-      if (window.scrollY > 450) {
+      if (window.scrollY > 350) {
         el.setAttribute("style", "opacity: 1;");
       }
-      return window.scrollY > 1399;
+      return window.scrollY > 799;
     },
   },
   mounted() {

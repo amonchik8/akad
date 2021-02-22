@@ -21,10 +21,10 @@ export default {
   },
   methods: {
     handleScroll: function (evt, el) {
-      if (window.scrollY > 599) {
+      if (window.scrollY > 499) {
         el.setAttribute("style", "opacity: 1;");
       }
-      return window.scrollY > 1199;
+      return window.scrollY > 799;
     },
   },
 };

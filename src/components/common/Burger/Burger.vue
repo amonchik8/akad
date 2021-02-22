@@ -1,9 +1,19 @@
 <template>
   <div class="burger">
-    <button @click="visible = !visible" class="burger__btn">
-      <span class="burger__line"></span>
-      <span class="burger__line"></span>
-      <span class="burger__line"></span>
+    <button
+      @click="visible = !visible"
+      :class="{ burger__active: visible, burger__btnActive: visible }"
+      class="burger__btn"
+    >
+      <span :class="{ burger__lineTop: visible }" class="burger__line"></span>
+      <span
+        :class="{ burger__lineCenter: visible }"
+        class="burger__line"
+      ></span>
+      <span
+        :class="{ burger__lineBottom: visible }"
+        class="burger__line"
+      ></span>
     </button>
     <transition
       enter-active-class="burger-enter"
@@ -45,6 +55,14 @@ export default {
     width: 320px;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .burger-leave {
   animation: burgerLeave 0.7s ease;
 }
@@ -52,14 +70,21 @@ export default {
   animation: burgerEnter 0.7s ease;
 }
 .burger {
+  &__active {
+    transition: opacity 0.7s ease;
+    // opacity: 0;
+  }
   &__btn {
     margin-top: 10px;
     cursor: pointer;
     @include size(36px);
     position: relative;
   }
+  &__btnActive {
+    cursor: auto;
+  }
   &__line {
-    cursor: pointer;
+    transition: all 0.7s ease;
     position: absolute;
     width: 36px;
     height: 2px;
@@ -76,6 +101,15 @@ export default {
     &:nth-child(3) {
       bottom: 0;
     }
+  }
+  &__lineTop {
+    transform: rotate(45deg) translateX(7px) translateY(10px);
+  }
+  &__lineCenter {
+    opacity: 0;
+  }
+  &__lineBottom {
+    transform: rotate(-45deg) translateX(7px) translateY(-10px);
   }
 }
 </style>

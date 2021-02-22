@@ -134,16 +134,21 @@ export default {
   }
 }
 .portfolio-list {
-  @include flex(flex-start, flex-start, column);
-  margin-bottom: 20px;
+  @include flex(center, center, row, wrap);
+  margin-bottom: 10px;
+  @include media(700px) {
+    @include flex(flex-start, flex-start, column);
+  }
   @include media {
     margin-bottom: 0;
   }
   &__title {
-    text-align: left;
-    max-width: 167px;
     line-height: 1.6;
     margin-bottom: 0;
+    @include media(700px) {
+      text-align: left;
+      max-width: 167px;
+    }
     @include media {
       margin-bottom: 40px;
       line-height: 1.9;
@@ -154,15 +159,21 @@ export default {
     cursor: pointer;
     @include text($H14, 700, $base-color);
     text-transform: uppercase;
-    margin-bottom: 0;
-    &:not(:last-child) {
-      margin-bottom: 15px;
-      @include media {
-        margin-bottom: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    @include media(700px) {
+      margin-bottom: 0;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      &:not(:first-child) {
+        margin-left: 20px;
       }
     }
-    &:not(:first-child) {
-      margin-left: 20px;
+    @include media {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
     }
   }
 }

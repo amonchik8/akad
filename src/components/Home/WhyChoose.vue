@@ -46,7 +46,7 @@ export default {
     @include media {
       padding: 75px 0;
     }
-    padding: 30px 0;
+    padding: 30px 0 0;
   }
   &__title {
     opacity: 0;

@@ -2,7 +2,7 @@
   <section class="testimonials">
     <div class="testimonials__container">
       <div class="testimonials__main box" v-scroll="handleScroll">
-          <Slider class="testimonials__slider" />
+        <Slider class="testimonials__slider" />
         <div class="testimonials-grid">
           <div
             class="testimonials-grid__image-wrapper"
@@ -134,6 +134,13 @@ export default {
     }
     &:nth-child(6) {
       grid-area: image-6;
+    }
+    @include hover {
+      cursor: pointer;
+      -webkit-transform: rotateZ(7deg);
+      -ms-transform: rotateZ(7deg);
+      transform: rotateZ(7deg);
+      transition: transform .5s ease;
     }
   }
 }

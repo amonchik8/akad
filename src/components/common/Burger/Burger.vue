@@ -2,7 +2,7 @@
   <div class="burger">
     <button
       @click="visible = !visible"
-      :class="{ burger__active: visible, burger__btnActive: visible }"
+      :class="{ burger__active: visible }"
       class="burger__btn"
     >
       <span :class="{ burger__lineTop: visible }" class="burger__line"></span>
@@ -75,13 +75,11 @@ export default {
     // opacity: 0;
   }
   &__btn {
+    z-index: 1020;
     margin-top: 10px;
     cursor: pointer;
     @include size(36px);
     position: relative;
-  }
-  &__btnActive {
-    cursor: auto;
   }
   &__line {
     transition: all 0.7s ease;

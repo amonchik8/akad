@@ -55,14 +55,6 @@ export default {
     width: 320px;
   }
 }
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .burger-leave {
   animation: burgerLeave 0.7s ease;
 }
@@ -72,7 +64,6 @@ export default {
 .burger {
   &__active {
     transition: opacity 0.7s ease;
-    // opacity: 0;
   }
   &__btn {
     z-index: 1020;

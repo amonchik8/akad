@@ -3,7 +3,6 @@
     <div class="footer__container">
       <div class="footer__main">
         <Navigation class="footer__navigation" />
-        <Burger class="footer__burger" />
         <div class="footer__author">
           Created by jedi 2021. All Rights Reserved
         </div>
@@ -14,12 +13,11 @@
 </template>
 
 <script>
-import Burger from './common/Burger/Burger.vue';
 import Navigation from "./common/Navigation.vue";
 import Social from "./common/Social.vue";
 
 export default {
-  components: { Social, Navigation, Burger },
+  components: { Social, Navigation },
   name: "TheFooter",
 };
 </script>
@@ -53,12 +51,6 @@ export default {
     display: none;
     @include media {
       display: flex;
-    }
-  }
-  &__burger {
-    border-top: 5px solid transparent;
-    @include media {
-      display: none;
     }
   }
 }

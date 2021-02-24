@@ -1,10 +1,6 @@
 <template>
   <div class="burger">
-    <button
-      @click="visible = !visible"
-      :class="{ burger__active: visible }"
-      class="burger__btn"
-    >
+    <button @click="$emit('toggle'), (visible = !visible)" class="burger__btn">
       <span :class="{ burger__lineTop: visible }" class="burger__line"></span>
       <span
         :class="{ burger__lineCenter: visible }"
@@ -15,20 +11,11 @@
         class="burger__line"
       ></span>
     </button>
-    <transition
-      enter-active-class="burger-enter"
-      leave-active-class="burger-leave"
-    >
-      <BurgerMenu v-show="visible" class="burger__menu" />
-    </transition>
   </div>
 </template>
 
 <script>
-import BurgerMenu from "./BurgerMenu.vue";
-
 export default {
-  components: { BurgerMenu },
   name: "Burger",
   data() {
     return {
@@ -39,32 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@keyframes burgerLeave {
-  from {
-    width: 320px;
-  }
-  to {
-    width: 0;
-  }
-}
-@keyframes burgerEnter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 320px;
-  }
-}
-.burger-leave {
-  animation: burgerLeave 0.7s ease;
-}
-.burger-enter {
-  animation: burgerEnter 0.7s ease;
-}
 .burger {
-  &__active {
-    transition: opacity 0.7s ease;
-  }
   &__btn {
     z-index: 1020;
     margin-top: 10px;

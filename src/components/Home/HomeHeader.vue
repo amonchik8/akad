@@ -1,7 +1,7 @@
 <template>
   <header class="home-header">
+    <MenuPanel class="home-header__panel" />
     <div class="home-header__container">
-      <MenuPanel class="home-header__panel" />
       <div class="home-header__title-wrapper">
         <div class="home-header__decor">we`re</div>
         <h1 class="home-header__title">creative agency</h1>
@@ -71,9 +71,20 @@ export default {
     }
   }
   &__panel {
-    margin-bottom: 100px;
+    background-color: $N0;
+    width: 100%;
+    z-index: 2000;
+    position: fixed;
+    padding: 20px 12px 0;
     @include media {
-      margin-bottom: 190px;
+      padding: 40px 24px 0;
+    }
+  }
+  &__title-wrapper {
+    margin-top: 100px;
+    @include media {
+      padding: 40px 24px 0;
+      margin-top: 190px;
     }
   }
   &__title {

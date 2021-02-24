@@ -57,6 +57,8 @@ export default {
   animation: burgerEnter 0.7s ease;
 }
 .nav-mobile {
+  max-width: 1172px;
+  margin: 0 auto;
   @include flex(space-between, center);
   &__image {
     cursor: pointer;

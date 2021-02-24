@@ -1,8 +1,9 @@
 <template>
   <section class="header">
     <div class="header__back">
+      <MenuPanel class="home-header__panel header__panel"></MenuPanel>
       <div class="container header__container">
-        <MenuPanel class="header__panel"></MenuPanel>
+        
         <Title class="header__title" :title=title></Title>
         <Subtitle>{{ subtitle }}</Subtitle>
       </div>
@@ -45,13 +46,14 @@ export default {
     }
   }
   &__panel {
-    margin-bottom: 50px;
-    @include media {
-      margin-bottom: 210px;
-    }
+    background-color: #F1F0F1;
   }
   &__title {
     @include text($H36, 700, $base-color);
+    margin-top: 150px;
+    @include media {
+      margin-top: 210px;
+    }
   }
 }
 </style>

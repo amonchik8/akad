@@ -75,9 +75,9 @@ export default {
     width: 100%;
     z-index: 2000;
     position: fixed;
-    padding: 20px 12px 0;
+    padding: 20px 12px;
     @include media {
-      padding: 40px 24px 0;
+      padding: 30px 24px;
     }
   }
   &__title-wrapper {

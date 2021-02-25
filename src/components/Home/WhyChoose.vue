@@ -51,10 +51,6 @@ export default {
   &__title {
     opacity: 0;
   }
-  &__icon {
-    @include text($H36, 400, $base-color);
-    margin-bottom: 10px;
-  }
   &__description {
     opacity: 0;
     max-width: 717px;

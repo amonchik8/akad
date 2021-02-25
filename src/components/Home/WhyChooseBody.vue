@@ -1,54 +1,66 @@
 <template>
-  <div class="block box" v-scroll="handleScroll">
-    <ul class="why-choose-list">
-      <div class="why-choose-list__row">
-        <li class="why-choose-list__item why-choose-list--col">
-          <ion-icon class="why-choose__icon" name="infinite-outline"></ion-icon>
-          <h3 class="why-choose-list__item-title">unlimited options</h3>
-          <span class="why-choose-list__item-body">Branding</span>
-          <span class="why-choose-list__item-body">Design & Copywriting</span>
-          <span class="why-choose-list__item-body">Concept development</span>
-          <span class="why-choose-list__item-body">User Experience</span>
-        </li>
-        <li class="why-choose-list__item">
-          <ion-icon class="why-choose__icon" name="shuffle-outline"></ion-icon>
-          <h3 class="why-choose-list__item-title">DESIGN & DEVELOPMENT</h3>
-          <span class="why-choose-list__item-body"
-            >Information architecture</span
-          >
-          <span class="why-choose-list__item-body">Interface design</span>
-          <span class="why-choose-list__item-body">Product Design</span>
-          <span class="why-choose-list__item-body"
-            >Integrated ad Companies</span
-          >
-        </li>
+  <div class="why-choose-body" v-scroll="handleScroll">
+      <div class="why-choose-list">
+        <why-choose-list-item
+          title="unlimited options"
+          body="Branding
+Design & Copywriting
+Concept development
+User Experience"
+        >
+          <template #icon>
+            <ion-icon
+              class="why-choose-list__icon"
+              name="infinite-outline"
+            ></ion-icon>
+          </template>
+        </why-choose-list-item>
+        <why-choose-list-item
+          title="DESIGN & DEVELOPMENT"
+          body="Information architecture
+Interface design
+Product Design
+Integrated ad Companies"
+        >
+          <template #icon>
+            <ion-icon
+              class="why-choose-list__icon"
+              name="shuffle-outline"
+            ></ion-icon>
+          </template>
+        </why-choose-list-item>
+        <why-choose-list-item
+          title="e-commerce"
+          body="Prototyping
+Technical Consulting
+Web applications
+Quality testing"
+        >
+          <template #icon>
+            <ion-icon
+              class="why-choose-list__icon"
+              name="cart-outline"
+            ></ion-icon>
+          </template>
+        </why-choose-list-item>
+        <why-choose-list-item
+          title="CUSTOMIZABLE DESIGN"
+          body="Information architecture
+Interface design
+Product Design
+Integrated ad Companies"
+        >
+          <template #icon>
+            <ion-icon
+              class="why-choose-list__icon"
+              name="options-outline"
+            ></ion-icon>
+          </template>
+        </why-choose-list-item>
       </div>
-      <div class="why-choose-list__row">
-        <li class="why-choose-list__item why-choose-list--col">
-          <ion-icon class="why-choose__icon" name="cart-outline"></ion-icon>
-          <h3 class="why-choose-list__item-title">e-commerce</h3>
-          <span class="why-choose-list__item-body">Prototyping</span>
-          <span class="why-choose-list__item-body">Technical Consulting</span>
-          <span class="why-choose-list__item-body">Web applications</span>
-          <span class="why-choose-list__item-body">Quality testing</span>
-        </li>
-        <li class="why-choose-list__item">
-          <ion-icon class="why-choose__icon" name="options-outline"></ion-icon>
-          <h3 class="why-choose-list__item-title">CUSTOMIZABLE DESIGN</h3>
-          <span class="why-choose-list__item-body"
-            >Information architecture</span
-          >
-          <span class="why-choose-list__item-body">Interface design</span>
-          <span class="why-choose-list__item-body">Product Design</span>
-          <span class="why-choose-list__item-body"
-            >Integrated ad Companies</span
-          >
-        </li>
-      </div>
-    </ul>
-    <div class="block__image-wrapper">
+    <div class="why-choose-body__image-wrapper">
       <img
-        class="block__image"
+        class="why-choose-body__image"
         src="@/assets/images/Home/imageWhyChoose.png"
         alt="image"
       />
@@ -57,7 +69,9 @@
 </template>
 
 <script>
+import WhyChooseListItem from "./WhyChooseListItem.vue";
 export default {
+  components: { WhyChooseListItem },
   name: "WhyChooseBody",
   methods: {
     handleScroll: function (evt, el) {
@@ -72,58 +86,48 @@ export default {
 
 <style lang="scss">
 .why-choose-list {
-  @include flex(center, stretch, column);
   margin-bottom: 20px;
+  @include media(730px) {
+    margin-right: 30px;
+  }
   @include media {
     @include flex(space-between, center, row, wrap);
     margin-bottom: 0;
-    margin-right: 125px;
+    margin-right: 5px;
   }
-  &--col {
-    @include media {
-      margin-right: 135px;
-    }
+  @include media(1123px) {
+    @include flex(space-between, center, row, wrap);
+    margin-right: 65px;
   }
-  &__row {
-    @include flex(space-between, center, row);
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-      @include media {
-        margin-bottom: 60px;
-      }
-    }
-  }
-  &__item-title {
-    @include text($H18, 700, $base-color);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  &__item-body {
-    @include text($H14, 400, $secondary-color);
-    text-transform: uppercase;
-    display: block;
-    line-height: 2.14;
+  &__icon {
+    @include text($H36, 400, $base-color);
+    margin-bottom: 10px;
   }
 }
-.block {
+.why-choose-body {
+  width: 100%;
   opacity: 0;
+  @include flex(center, center, column);
+  @include media(730px) {
+    @include flex(center, center, row);
+  }
   @include media {
     @include flex(space-between, center, row);
   }
-  @include flex(center, center, column);
   &__image-wrapper {
     width: 100%;
     max-width: 460px;
     position: relative;
     @include media {
-      width: 100%;
-      padding-bottom: 44.3%;
+      max-width: 453px;
+      padding-bottom: 38%;
       margin-bottom: 0;
     }
   }
   &__image {
     z-index: 2;
     width: 100%;
+    max-height: 412px;
     @include media {
       position: absolute;
     }

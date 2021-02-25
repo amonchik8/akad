@@ -35,8 +35,11 @@ export default {
     padding: 20px 12px;
   }
   &__main {
-    @include flex(space-between, center, row);
+    @include flex(flex-end, center, row);
     margin-bottom: 30px;
+    @include media {
+      @include flex(space-between, center, row);
+    }
   }
   &__author {
     @include text($H14, 400, $author-color);

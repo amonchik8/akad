@@ -2,9 +2,14 @@
   <div class="input">
     <div class="input__label-wrapper">
       <label class="input__label" v-if="!!label">{{ label }}</label>
-      <span v-if="hasError" class="input__error-message">{{
-        errorMessage
-      }}</span>
+      <transition
+        enter-active-class="error-enter"
+        leave-active-class="error-leave"
+      >
+        <span v-if="hasError" class="input__error-message">{{
+          errorMessage
+        }}</span>
+      </transition>
     </div>
     <input
       class="input__input"
@@ -39,8 +44,9 @@ export default {
 
 <style lang="scss">
 .input {
-    width: 100%;
+  width: 100%;
   &__input {
+    transition: border-color .3s ease;
     @include text($H14, 400, $base-color);
     width: 100%;
     padding: 16px 20px;
@@ -73,5 +79,27 @@ export default {
 }
 .input__input._error {
   border-color: $invalid-color;
+}
+@keyframes errorLeave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes errorEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.error-leave {
+  animation: errorLeave 0.3s ease;
+}
+.error-enter {
+  animation: errorEnter 0.3s ease;
 }
 </style>

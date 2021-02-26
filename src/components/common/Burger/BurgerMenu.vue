@@ -28,7 +28,7 @@ export default {
 .burger-menu {
   @include flex(flex-start, center, column);
   height: 100%;
-  width: 320px;
+  width: 100%;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -36,6 +36,9 @@ export default {
   background-color: rgb(63, 63, 65);
   overflow-x: hidden;
   padding-top: 90px;
+  @include media {
+    width: 320px;
+  }
   &__link {
     text-transform: uppercase;
     margin-bottom: 20px;

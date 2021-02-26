@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     handleScroll: function (evt, el) {
-      if (window.scrollY > 1200) {
+      if (window.scrollY > 900) {
         el.setAttribute("style", "opacity: 1;");
       }
       return window.scrollY > 1699;

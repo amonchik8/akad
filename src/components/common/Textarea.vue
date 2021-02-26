@@ -2,9 +2,14 @@
   <div class="textarea">
     <div class="textarea__label-wrapper">
       <label class="textarea__label" v-if="!!label">{{ label }}</label>
-      <span v-if="hasError" class="textarea__error-message">{{
-        errorMessage
-      }}</span>
+      <transition
+        enter-active-class="error-enter"
+        leave-active-class="error-leave"
+      >
+        <span v-if="hasError" class="textarea__error-message">{{
+          errorMessage
+        }}</span>
+      </transition>
     </div>
     <textarea
       class="textarea__textarea"
@@ -39,10 +44,11 @@ export default {
 
 <style lang="scss">
 .textarea {
-    width: 100%;
+  width: 100%;
   &__textarea {
     padding: 16px 20px;
     border: 1px solid $input-color;
+    transition: border-color 0.3s ease;
     outline: none;
     resize: none;
     height: 200px;
@@ -71,5 +77,27 @@ export default {
 }
 .textarea__textarea._error {
   border-color: $invalid-color;
+}
+@keyframes errorLeave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes errorEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.error-leave {
+  animation: errorLeave 0.3s ease;
+}
+.error-enter {
+  animation: errorEnter 0.3s ease;
 }
 </style>

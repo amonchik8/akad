@@ -1,5 +1,5 @@
 <template>
-    <div v-scroll="handleScroll" class="we-do box">
+    <div class="we-do box">
       <IconTitle class="title-decoration title-decoration--icon"
         ><slot
       /></IconTitle>
@@ -19,20 +19,11 @@ export default {
     subtitle: String,
     content: String,
   },
-  methods: {
-    handleScroll: function (evt, el) {
-      if (window.scrollY > 499) {
-        el.setAttribute("style", "opacity: 1;");
-      }
-      return window.scrollY > 799;
-    },
-  },
 };
 </script>
 
 <style lang="scss">
 .we-do {
-  opacity: 0;
   @include flex(center, center, column);
   &__title {
     @include text($H48, 400, $base-color);

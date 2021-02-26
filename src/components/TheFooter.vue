@@ -35,7 +35,7 @@ export default {
     padding: 20px 12px;
   }
   &__main {
-    @include flex(flex-end, center, row);
+    @include flex(center, center, row);
     margin-bottom: 30px;
     @include media {
       @include flex(space-between, center, row);

@@ -51,10 +51,10 @@ export default {
   }
 }
 .burger-leave {
-  animation: burgerLeave 0.7s ease;
+  animation: burgerLeave 0.3s ease;
 }
 .burger-enter {
-  animation: burgerEnter 0.7s ease;
+  animation: burgerEnter 0.3s ease;
 }
 .nav-mobile {
   max-width: 1172px;

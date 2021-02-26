@@ -121,7 +121,7 @@ export default {
     color: $base-color;
     text-transform: uppercase;
     padding: 9px 12px;
-    background-color: $input-color;
+    background-color: $G90;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);

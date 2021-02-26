@@ -36,7 +36,6 @@ export default {
   background-color: rgb(63, 63, 65);
   overflow-x: hidden;
   padding-top: 90px;
-  transition: 0.5s;
   &__link {
     text-transform: uppercase;
     margin-bottom: 20px;

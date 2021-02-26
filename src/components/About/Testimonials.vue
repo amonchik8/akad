@@ -140,7 +140,7 @@ export default {
       -webkit-transform: rotateZ(7deg);
       -ms-transform: rotateZ(7deg);
       transform: rotateZ(7deg);
-      transition: transform .5s ease;
+      transition: transform .3s ease;
     }
   }
 }

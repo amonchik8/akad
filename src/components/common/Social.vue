@@ -43,15 +43,21 @@ export default {
 
 <style lang="scss">
 .social {
-  @include flex(flex-end);
+  @include flex(center);
+  @include media {
+    @include flex(flex-end);
+  }
   &__item {
     &:not(:last-child) {
       margin-right: 20px;
     }
   }
   &__icon {
-    @include text($H18, 400, $secondary-color);
+    @include text($H24, 400, $secondary-color);
     transition: color 0.2s ease;
+    @include media {
+      @include text($H18, 400, $secondary-color);
+    }
     @include hover {
       color: $G90;
     }

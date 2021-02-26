@@ -28,9 +28,8 @@
 </template>
 
 <script>
-// import Burger from './common/Burger.vue';
+
 export default {
-  // components: { Burger },
   name: "Navigation",
 };
 </script>

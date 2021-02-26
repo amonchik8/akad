@@ -61,6 +61,9 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @include media {
+    height: 100vh;
+  }
   &__container {
     max-width: 1188px;
     width: 100%;

@@ -35,7 +35,7 @@ export default {
     position: relative;
   }
   &__line {
-    transition: all 0.7s ease;
+    transition: all 0.3s ease;
     position: absolute;
     width: 36px;
     height: 2px;

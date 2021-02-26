@@ -261,7 +261,7 @@ export default {
   flex-wrap: wrap;
 }
 .portfolio-grid__item {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .portfolio-grid-enter,
 .portfolio-grid-leave-to {
@@ -272,7 +272,7 @@ export default {
   position: absolute;
 }
 .flip {
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 .flip-enter,
 .flip-leave-to {

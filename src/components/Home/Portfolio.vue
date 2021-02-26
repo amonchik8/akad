@@ -1,8 +1,7 @@
 <template>
-  <section class="portfolio">
+  <section id="portfolio" class="portfolio">
     <div class="portfolio__container">
       <Title
-        id="portfolio"
         class="title-decoration portfolio__title box"
         v-scroll="handleScroll"
         title="our portfolio"

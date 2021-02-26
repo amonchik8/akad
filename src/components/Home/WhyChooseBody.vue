@@ -112,9 +112,6 @@ export default {
   width: 100%;
   opacity: 0;
   @include flex(center, center, column);
-  // @include media(730px) {
-  //   @include flex(center, center, row);
-  // }
   @include media {
     @include flex(space-between, center, row);
   }
@@ -131,7 +128,7 @@ export default {
     position: relative;
     @include media {
       max-width: 453px;
-      padding-bottom: 38%;
+      padding-bottom: 36.1%;
       margin-bottom: 0;
     }
   }

@@ -33,7 +33,7 @@ export default {
       if (window.scrollY > 900) {
         el.setAttribute("style", "opacity: 1;");
       }
-      return window.scrollY > 1699;
+      return window.scrollY > 1399;
     },
   },
 };

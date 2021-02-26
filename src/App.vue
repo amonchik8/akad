@@ -17,7 +17,7 @@ export default {
   transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
+  transition: opacity .4s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;

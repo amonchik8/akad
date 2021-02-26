@@ -58,7 +58,7 @@ Integrated ad Companies"
         </template>
       </why-choose-list-item>
     </div>
-    <text-slider class="why-choose-body__slider" />
+    <TextSlider class="why-choose-body__slider" />
     <div class="why-choose-body__image-wrapper">
       <img
         class="why-choose-body__image"
